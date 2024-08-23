@@ -24,12 +24,14 @@ import { Messages } from './pages/MessagesPage';
 import { QuestionnairePage } from './pages/QuestionnairePage';
 import { ObservationPage } from './pages/ObservationPage';
 import { SignOutPage } from './pages/SignOutPage';
+import { ChartWrapper } from './components/ChartApp';
+
 
 export function Router(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="messages/" element={<MessageTable />} />
+      <Route path="/chart/*" element={<ChartWrapper />} />      <Route path="messages/" element={<MessageTable />} />
       <Route path="messages/:practitionerId" element={<Messages />} />
       <Route path="Questionnaire/:questionnaireId" element={<QuestionnairePage />} />
       <Route path="health-record/*" element={<HealthRecord />}>

@@ -13,6 +13,7 @@ const navigation = [
   { name: 'Messages', href: '/messages' },
   { name: 'Care Plan', href: '/care-plan' },
   { name: 'Get Care', href: '/get-care' },
+  { name: 'Chart', href: '/chart' },
 ];
 
 export function Header(): JSX.Element {

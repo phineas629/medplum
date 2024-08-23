@@ -10,11 +10,6 @@ import { App } from './App';
 import '@mantine/notifications/styles.css';
 import { Notifications } from '@mantine/notifications';
 
-const medplum = new MedplumClient({
-  onUnauthenticated: () => (window.location.href = '/'),
-  // baseUrl: 'http://localhost:8103/', //Uncomment this to run against the server on your localhost
-});
-
 const theme = createTheme({
   headings: {
     sizes: {
@@ -33,18 +28,3 @@ const theme = createTheme({
     xl: '1.125rem',
   },
 });
-
-const container = document.getElementById('root') as HTMLDivElement;
-const root = createRoot(container);
-root.render(
-  <StrictMode>
-    <BrowserRouter>
-      <MedplumProvider medplum={medplum}>
-        <MantineProvider theme={theme}>
-          <Notifications />
-          <App />
-        </MantineProvider>
-      </MedplumProvider>
-    </BrowserRouter>
-  </StrictMode>
-);

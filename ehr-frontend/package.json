@@ -5,6 +5,7 @@
   "workspaces": [
     "core",
     "chat",
+    "chart",
     "client-external-idp",
     "eligibility",
     "fhircast",
