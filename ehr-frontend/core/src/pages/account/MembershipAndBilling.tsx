@@ -1,7 +1,7 @@
 import { Box, Stack, Table, Title } from '@mantine/core';
-import { formatCoding, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { formatCoding, getReferenceString } from '@medplum/core';
 import { Coverage, Patient } from '@medplum/fhirtypes';
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { useMedplum } from '@medplum/react';
 import { InfoButton } from '../../components/InfoButton';
 import { InfoSection } from '../../components/InfoSection';
 

@@ -1,6 +1,6 @@
-import { calculateAgeString } from 'workspace:workspace:@medplum/core';
+import { calculateAgeString } from '@medplum/core';
 import { Patient, Reference } from '@medplum/fhirtypes';
-import { HumanNameDisplay, MedplumLink, ResourceAvatar, useResource } from 'workspace:workspace:@medplum/react';
+import { HumanNameDisplay, MedplumLink, ResourceAvatar, useResource } from '@medplum/react';
 import classes from './PatientHeader.module.css';
 
 export interface PatientHeaderProps {

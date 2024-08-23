@@ -1,7 +1,7 @@
 import { Title, Button, Group } from '@mantine/core';
-import { formatHumanName } from 'workspace:workspace:@medplum/core';
+import { formatHumanName } from '@medplum/core';
 import { Practitioner } from '@medplum/fhirtypes';
-import { Document, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplum, useMedplumProfile } from '@medplum/react';
 import { useState } from 'react';
 
 /**

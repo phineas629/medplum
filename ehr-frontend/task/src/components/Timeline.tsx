@@ -1,4 +1,4 @@
-import { DefaultResourceTimeline } from 'workspace:workspace:@medplum/react';
+import { DefaultResourceTimeline } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 /*

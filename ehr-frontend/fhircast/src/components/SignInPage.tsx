@@ -1,5 +1,5 @@
 import { Title } from '@mantine/core';
-import { Logo, SignInForm } from 'workspace:workspace:@medplum/react';
+import { Logo, SignInForm } from '@medplum/react';
 import { useNavigate } from 'react-router-dom';
 
 export default function SignInPage(): JSX.Element {

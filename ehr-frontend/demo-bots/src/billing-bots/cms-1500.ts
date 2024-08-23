@@ -8,7 +8,7 @@ import {
   formatQuantity,
   getReferenceString,
   MedplumClient,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import {
   Claim,
   Coverage,

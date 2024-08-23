@@ -4,7 +4,8 @@
 import { execSync } from 'child_process';
 import esbuild from 'esbuild';
 import { writeFileSync } from 'fs';
-import packageJson from './package.json' with { type: 'json' };
+import { readFile } from 'fs/promises';
+const packageJson = JSON.parse(await readFile('./package.json', 'utf-8'));
 
 let gitHash;
 try {

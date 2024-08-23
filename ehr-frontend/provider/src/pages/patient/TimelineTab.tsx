@@ -1,5 +1,5 @@
 import { Loader } from '@mantine/core';
-import { PatientTimeline } from 'workspace:workspace:@medplum/react';
+import { PatientTimeline } from '@medplum/react';
 import { usePatient } from '../../hooks/usePatient';
 
 export function TimelineTab(): JSX.Element {

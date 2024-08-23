@@ -1,6 +1,6 @@
 import { Alert } from '@mantine/core';
-import { InternalTypeSchema, addProfileToResource, normalizeErrorString, tryGetProfile } from 'workspace:workspace:@medplum/core';
-import { Loading, ResourceForm, ResourceFormProps, useMedplum } from 'workspace:workspace:@medplum/react';
+import { InternalTypeSchema, addProfileToResource, normalizeErrorString, tryGetProfile } from '@medplum/core';
+import { Loading, ResourceForm, ResourceFormProps, useMedplum } from '@medplum/react';
 import { IconAlertCircle } from '@tabler/icons-react';
 import { ReactNode, useCallback, useEffect, useState } from 'react';
 import { Resource } from '@medplum/fhirtypes';

@@ -1,4 +1,4 @@
-import { ContentType } from 'workspace:workspace:@medplum/core';
+import { ContentType } from '@medplum/core';
 import { Bundle, BundleEntry } from '@medplum/fhirtypes';
 import { randomUUID } from 'crypto';
 import fs from 'fs';

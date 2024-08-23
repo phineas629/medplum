@@ -1,4 +1,4 @@
-import { BotEvent, getReferenceString, MedplumClient, normalizeErrorString, PatchOperation } from 'workspace:workspace:@medplum/core';
+import { BotEvent, getReferenceString, MedplumClient, normalizeErrorString, PatchOperation } from '@medplum/core';
 import { AllergyIntolerance, Identifier, MedicationRequest, Patient } from '@medplum/fhirtypes';
 import fetch from 'node-fetch';
 import { CreatePatientVariables, PhotonAllergenInput, PhotonMedHistoryInput, PhotonPatient } from '../photon-types';

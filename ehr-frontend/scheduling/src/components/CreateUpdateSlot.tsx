@@ -1,8 +1,8 @@
 import { Button, Modal } from '@mantine/core';
-import { createReference, getQuestionnaireAnswers, normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { createReference, getQuestionnaireAnswers, normalizeErrorString } from '@medplum/core';
 import { Questionnaire, QuestionnaireItem, QuestionnaireResponse, Reference, Schedule, Slot } from '@medplum/fhirtypes';
 import { Event } from 'react-big-calendar';
-import { Loading, QuestionnaireForm, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Loading, QuestionnaireForm, useMedplum } from '@medplum/react';
 import { ScheduleContext } from '../Schedule.context';
 import { useContext } from 'react';
 import { showNotification } from '@mantine/notifications';

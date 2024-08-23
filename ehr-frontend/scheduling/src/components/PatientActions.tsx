@@ -4,7 +4,7 @@ import { Patient } from '@medplum/fhirtypes';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { ScheduleContext } from '../Schedule.context';
-import { Loading } from 'workspace:workspace:@medplum/react';
+import { Loading } from '@medplum/react';
 
 interface PatientActionsProps {
   patient: Patient;

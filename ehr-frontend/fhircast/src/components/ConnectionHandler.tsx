@@ -1,5 +1,5 @@
-import { FhircastConnection, FhircastMessageEvent, FhircastMessagePayload, SubscriptionRequest } from 'workspace:workspace:@medplum/core';
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { FhircastConnection, FhircastMessageEvent, FhircastMessagePayload, SubscriptionRequest } from '@medplum/core';
+import { useMedplum } from '@medplum/react';
 import { useEffect, useRef, useState } from 'react';
 
 type ConnectionStatus = 'IDLE' | 'CONNECTING' | 'CONNECTED' | 'DISCONNECTING' | 'DISCONNECTED' | 'UNSUBSCRIBED';

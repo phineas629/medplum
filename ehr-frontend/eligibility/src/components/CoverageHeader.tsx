@@ -1,6 +1,6 @@
-import { getDisplayString } from 'workspace:workspace:@medplum/core';
+import { getDisplayString } from '@medplum/core';
 import { Patient, Reference, Organization, RelatedPerson } from '@medplum/fhirtypes';
-import { HumanNameDisplay, MedplumLink, useResource } from 'workspace:workspace:@medplum/react';
+import { HumanNameDisplay, MedplumLink, useResource } from '@medplum/react';
 import styles from './CoverageHeader.module.css';
 
 interface CoverageHeaderProps {

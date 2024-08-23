@@ -1,6 +1,6 @@
-import { tryGetDataType } from 'workspace:workspace:@medplum/core';
+import { tryGetDataType } from '@medplum/core';
 import { ResourceType } from '@medplum/fhirtypes';
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { useMedplum } from '@medplum/react';
 import { useEffect, useRef, useState } from 'react';
 
 type UseResourceTypeOptions = {

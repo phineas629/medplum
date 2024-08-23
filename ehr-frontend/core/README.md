@@ -93,3 +93,15 @@ Medplum supports self-hosting and provides a [hosted service](https://app.medplu
 - Read our [documentation](https://docs.medplum.com/)
 - Browse our [React component library](https://docs.medplum.com/storybook/index.html?)
 - Join our [Discord](https://discord.gg/medplum)
+
+
+
+AUTHOR: PHINEAS629
+TO RUN EHR-FRONTEND: 
+- RUN 'DOCKER COMPOSE UP' IN ROOT
+- RUN 'NPM RUN DEV' IN PACKAGES/SERVER
+- RUN 'NPM RUN DEV' IN PACKAGES/APP
+- LOGIN WITH SUPER USER 
+- GET MEDPLUM SERVER ID
+- SET ENV VARIABLES IN .ENV FILE WITH SERVER ID
+- RUN 'NPM RUN DEV' IN EHR-FRONTEND/CORE

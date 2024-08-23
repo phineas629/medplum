@@ -1,8 +1,8 @@
 import { Button, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { normalizeErrorString } from '@medplum/core';
 import { Coverage, Resource } from '@medplum/fhirtypes';
-import { ResourceForm, useMedplum } from 'workspace:workspace:@medplum/react';
+import { ResourceForm, useMedplum } from '@medplum/react';
 import { showNotification } from '@mantine/notifications';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { cleanResource } from '../utils';

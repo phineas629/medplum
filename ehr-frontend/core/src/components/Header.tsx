@@ -1,6 +1,6 @@
 import { AppShell, Burger, Container, Group, Menu, UnstyledButton, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { ResourceAvatar, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { ResourceAvatar, useMedplumProfile } from '@medplum/react';
 import { IconChevronDown, IconLogout, IconSettings, IconUserCircle } from '@tabler/icons-react';
 import cx from 'clsx';
 import { useState } from 'react';

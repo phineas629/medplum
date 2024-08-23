@@ -1,9 +1,9 @@
 import { Alert, Button, Group, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { notifications } from '@mantine/notifications';
-import { MedplumClient, normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { MedplumClient, normalizeErrorString } from '@medplum/core';
 import { Task } from '@medplum/fhirtypes';
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { useMedplum } from '@medplum/react';
 import { IconAlertCircle, IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 

@@ -1,8 +1,8 @@
 import { Button, LoadingOverlay } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { capitalize, getReferenceString, MedplumClient, normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { capitalize, getReferenceString, MedplumClient, normalizeErrorString } from '@medplum/core';
 import { Bot, Bundle, BundleEntry, Practitioner } from '@medplum/fhirtypes';
-import { Document, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useCallback, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -111,9 +111,9 @@ async function uploadExampleBots(medplum: MedplumClient, profile: Practitioner):
   for (const entry of botEntries) {
     const botName = (entry?.resource as Bot)?.name as string;
     const distUrl = (entry?.resource as Bot).executableCode?.url;
-    const distBinaryEntry = exampleBotData.entry.find((e) => e.fullUrl === distUrl);
+    const distBinaryEntry = exampleBotData.entry.find((e: { fullUrl: string | undefined; }) => e.fullUrl === distUrl);
     // Decode the base64 encoded code and deploy
-    const code = atob(distBinaryEntry?.resource.data as string);
+    const code = atob((distBinaryEntry?.resource as { data?: string })?.data || '');
     await medplum.post(medplum.fhirUrl('Bot', botIds[botName], '$deploy'), { code });
   }
 

@@ -12,7 +12,7 @@ import {
   SNOMED,
   streamToBuffer,
   UCUM,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import {
   Attachment,
   CodeableConcept,

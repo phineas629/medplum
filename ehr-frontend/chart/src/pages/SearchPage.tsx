@@ -1,8 +1,8 @@
 import { Paper } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Filter, formatSearchQuery, parseSearchRequest, SearchRequest, SortRule } from 'workspace:workspace:@medplum/core';
+import { Filter, formatSearchQuery, parseSearchRequest, SearchRequest, SortRule } from '@medplum/core';
 import { UserConfiguration } from '@medplum/fhirtypes';
-import { Loading, SearchControl, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Loading, SearchControl, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CreateEncounter } from '../components/actions/CreateEncounter';

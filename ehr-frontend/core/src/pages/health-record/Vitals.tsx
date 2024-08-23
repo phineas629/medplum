@@ -1,7 +1,7 @@
 import { Table, Title } from '@mantine/core';
-import { formatDate, formatObservationValue, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { formatDate, formatObservationValue, getReferenceString } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { Document, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplum } from '@medplum/react';
 
 export function Vitals(): JSX.Element {
   const medplum = useMedplum();

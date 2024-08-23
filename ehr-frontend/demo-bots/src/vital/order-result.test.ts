@@ -3,7 +3,7 @@ import {
   createReference,
   indexSearchParameterBundle,
   indexStructureDefinitionBundle,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import { readJson, SEARCH_PARAMETER_BUNDLE_FILES } from '@medplum/definitions';
 import { Bundle, BundleEntry, Observation, Patient, ProjectSetting, SearchParameter } from '@medplum/fhirtypes';
 import { MockClient } from '@medplum/mock';

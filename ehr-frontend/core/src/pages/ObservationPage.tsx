@@ -1,5 +1,5 @@
 import { Title } from '@mantine/core';
-import { Document, ResourceTable, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, ResourceTable, useMedplum } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 export function ObservationPage(): JSX.Element {

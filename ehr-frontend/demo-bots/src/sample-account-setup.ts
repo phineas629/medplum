@@ -1,4 +1,4 @@
-import { BotEvent, createReference, getReferenceString, LOINC, MedplumClient, SNOMED, UCUM } from 'workspace:workspace:@medplum/core';
+import { BotEvent, createReference, getReferenceString, LOINC, MedplumClient, SNOMED, UCUM } from '@medplum/core';
 import {
   AllergyIntolerance,
   BundleEntry,

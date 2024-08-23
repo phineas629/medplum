@@ -1,5 +1,5 @@
 import { OperationOutcome, Patient } from '@medplum/fhirtypes';
-import { useResource } from 'workspace:workspace:@medplum/react';
+import { useResource } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 type Options = {

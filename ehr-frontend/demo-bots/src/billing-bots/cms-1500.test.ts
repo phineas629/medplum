@@ -1,4 +1,4 @@
-import { indexSearchParameterBundle, indexStructureDefinitionBundle } from 'workspace:workspace:@medplum/core';
+import { indexSearchParameterBundle, indexStructureDefinitionBundle } from '@medplum/core';
 import { readJson, SEARCH_PARAMETER_BUNDLE_FILES } from '@medplum/definitions';
 import { Bundle, Claim, SearchParameter } from '@medplum/fhirtypes';
 import { MockClient } from '@medplum/mock';

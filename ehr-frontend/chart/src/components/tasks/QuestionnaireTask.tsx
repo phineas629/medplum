@@ -1,8 +1,8 @@
 import { Anchor, Button, Collapse, Flex, Modal, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { TypedValue, getTypedPropertyValue } from 'workspace:workspace:@medplum/core';
+import { TypedValue, getTypedPropertyValue } from '@medplum/core';
 import { Questionnaire, QuestionnaireResponse, QuestionnaireResponseItem, Task } from '@medplum/fhirtypes';
-import { QuestionnaireForm, ResourcePropertyDisplay, useMedplum } from 'workspace:workspace:@medplum/react';
+import { QuestionnaireForm, ResourcePropertyDisplay, useMedplum } from '@medplum/react';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 import { TaskCellProps } from './TaskList';

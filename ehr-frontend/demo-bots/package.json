@@ -5,16 +5,16 @@
   "license": "Apache-2.0",
   "author": "Medplum <hello@medplum.com>",
   "type": "module",
-  "scripts": {
-    "build": "tsc && vite build",
-    "clean": "rimraf dist",
-    "lint": "eslint .",
-    "prettier": "prettier --write .",
-    "test": "vitest",
-    "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui",
-    "dev": "vite"
-  },
+"scripts": {
+  "build": "node esbuild-script.mjs",
+  "clean": "rimraf dist",
+  "lint": "eslint .",
+  "prettier": "prettier --write .",
+  "test": "vitest",
+  "test:coverage": "vitest run --coverage",
+  "test:ui": "vitest --ui",
+  "dev": "node esbuild-script.mjs --watch"
+},
   "prettier": {
     "printWidth": 120,
     "singleQuote": true,

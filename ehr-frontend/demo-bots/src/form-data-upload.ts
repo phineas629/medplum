@@ -1,4 +1,4 @@
-import { MedplumClient } from 'workspace:workspace:@medplum/core';
+import { MedplumClient } from '@medplum/core';
 import FormData from 'form-data';
 import fetch from 'node-fetch';
 

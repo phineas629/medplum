@@ -8,9 +8,9 @@
     "lint": "eslint .",
     "start": "expo start",
     "web": "expo start --web",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "test": "vitest"
+    "dev": "expo start",
+    "build": "echo 'Build disabled for ehr-frontend-react-native-example'",
+    "test": "jest"
   },
   "prettier": {
     "printWidth": 120,
@@ -23,7 +23,7 @@
     ]
   },
   "dependencies": {
-    "@expo/metro-runtime": "3.2.1",
+    "@expo/metro-runtime": "~3.2.3",
     "@medplum/core": "*",
     "@medplum/expo-polyfills": "3.2.7",
     "@medplum/fhirtypes": "3.2.7",

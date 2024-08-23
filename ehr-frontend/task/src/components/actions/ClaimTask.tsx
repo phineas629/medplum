@@ -1,9 +1,9 @@
 import { Button, Group, Modal, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { notifications } from '@mantine/notifications';
-import { createReference, MedplumClient, normalizeErrorString, PatchOperation } from 'workspace:workspace:@medplum/core';
+import { createReference, MedplumClient, normalizeErrorString, PatchOperation } from '@medplum/core';
 import { Practitioner, Task } from '@medplum/fhirtypes';
-import { useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 
 interface ClaimTaskProps {

@@ -1,4 +1,4 @@
-import { ContentType } from 'workspace:workspace:@medplum/core';
+import { ContentType } from '@medplum/core';
 import { Bot, QuestionnaireResponse, Reference } from '@medplum/fhirtypes';
 import { MockClient } from '@medplum/mock';
 import { expect, test, vi } from 'vitest';

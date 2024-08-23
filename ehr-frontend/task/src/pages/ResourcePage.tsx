@@ -1,5 +1,5 @@
 import { Paper, Tabs, Title } from '@mantine/core';
-import { getDisplayString, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { getDisplayString, getReferenceString } from '@medplum/core';
 import {
   DefaultResourceTimeline,
   DiagnosticReportDisplay,
@@ -7,7 +7,7 @@ import {
   ResourceTable,
   useMedplumNavigate,
   useResource,
-} from 'workspace:workspace:@medplum/react';
+} from '@medplum/react';
 import { useParams } from 'react-router-dom';
 import { ResourceHistoryTab } from '../components/ResourceHistoryTab';
 import { DiagnosticReport } from '@medplum/fhirtypes';

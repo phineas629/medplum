@@ -3,7 +3,7 @@
 /* eslint no-console: "off" */
 /*eslint no-process-exit: "off"*/
 
-import botLayer from '@medplum/bot-layer/package.json' with { type: 'json' };
+import botLayer from '@medplum/bot-layer/package.json' assert { type: 'json' };
 import esbuild from 'esbuild';
 import fastGlob from 'fast-glob';
 

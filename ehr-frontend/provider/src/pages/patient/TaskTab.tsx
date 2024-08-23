@@ -1,7 +1,7 @@
 import { Blockquote, Group, Paper, Stack, Tabs, Title, Text } from '@mantine/core';
-import { formatCodeableConcept, getDisplayString } from 'workspace:workspace:@medplum/core';
+import { formatCodeableConcept, getDisplayString } from '@medplum/core';
 import { Annotation, Task } from '@medplum/fhirtypes';
-import { Container, DefaultResourceTimeline, Document, ResourceTable, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Container, DefaultResourceTimeline, Document, ResourceTable, useMedplum } from '@medplum/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { TaskActions } from '../../components/tasks/actions/TaskActions';
 import { useEffect, useState } from 'react';

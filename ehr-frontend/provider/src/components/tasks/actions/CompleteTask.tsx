@@ -1,8 +1,8 @@
 import { Button } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
-import { normalizeErrorString, PatchOperation } from 'workspace:workspace:@medplum/core';
+import { normalizeErrorString, PatchOperation } from '@medplum/core';
 import { Task } from '@medplum/fhirtypes';
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { useMedplum } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { ReactNode } from 'react';
 

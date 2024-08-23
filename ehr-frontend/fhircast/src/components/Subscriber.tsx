@@ -1,6 +1,6 @@
 import { Accordion, Center, Divider, Group, Stack, Text, Title } from '@mantine/core';
-import { FhircastMessagePayload, SubscriptionRequest } from 'workspace:workspace:@medplum/core';
-import { Document, useMedplum, usePrevious } from 'workspace:workspace:@medplum/react';
+import { FhircastMessagePayload, SubscriptionRequest } from '@medplum/core';
+import { Document, useMedplum, usePrevious } from '@medplum/react';
 import { IconMessage2Exclamation } from '@tabler/icons-react';
 import { useCallback, useEffect, useState } from 'react';
 import { useClientId } from '../hooks';

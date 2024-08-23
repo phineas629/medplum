@@ -1,9 +1,9 @@
 import { Button, Group, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { normalizeErrorString, PatchOperation } from 'workspace:workspace:@medplum/core';
+import { normalizeErrorString, PatchOperation } from '@medplum/core';
 import { Communication } from '@medplum/fhirtypes';
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { useMedplum } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 
 interface CloseOpenThreadProps {

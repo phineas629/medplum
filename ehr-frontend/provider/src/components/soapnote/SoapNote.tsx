@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@mantine/core';
-import { createReference } from 'workspace:workspace:@medplum/core';
+import { createReference } from '@medplum/core';
 import { QuestionnaireResponse, Task } from '@medplum/fhirtypes';
-import { Document, QuestionnaireForm, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, QuestionnaireForm, useMedplum } from '@medplum/react';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { useState } from 'react';
 import { usePatient } from '../../hooks/usePatient';

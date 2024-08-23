@@ -1,4 +1,4 @@
-import { BotEvent, MedplumClient, createReference } from 'workspace:workspace:@medplum/core';
+import { BotEvent, MedplumClient, createReference } from '@medplum/core';
 import {
   Binary,
   Bundle,

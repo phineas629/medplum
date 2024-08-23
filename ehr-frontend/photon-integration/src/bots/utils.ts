@@ -1,4 +1,4 @@
-import { normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { normalizeErrorString } from '@medplum/core';
 import { Address, ContactPoint, Patient } from '@medplum/fhirtypes';
 import { PhotonAddress } from '../photon-types';
 

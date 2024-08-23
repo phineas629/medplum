@@ -6,7 +6,7 @@ import {
   indexSearchParameterBundle,
   indexStructureDefinitionBundle,
   resolveId,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import { SEARCH_PARAMETER_BUNDLE_FILES, readJson } from '@medplum/definitions';
 import { Bundle, List, Patient, SearchParameter } from '@medplum/fhirtypes';
 import { MockClient } from '@medplum/mock';

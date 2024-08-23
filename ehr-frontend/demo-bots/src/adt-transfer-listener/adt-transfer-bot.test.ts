@@ -1,4 +1,4 @@
-import { Hl7Message, indexSearchParameterBundle, indexStructureDefinitionBundle } from 'workspace:workspace:@medplum/core';
+import { Hl7Message, indexSearchParameterBundle, indexStructureDefinitionBundle } from '@medplum/core';
 import { Bot, Bundle, Reference, SearchParameter } from '@medplum/fhirtypes';
 import { MockClient } from '@medplum/mock';
 import { expect, test } from 'vitest';

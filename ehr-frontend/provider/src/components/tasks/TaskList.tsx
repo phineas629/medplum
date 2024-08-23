@@ -1,5 +1,5 @@
 import { Box, Card, Divider, Flex, Group, Text, Title } from '@mantine/core';
-import { formatDate, getDisplayString, normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { formatDate, getDisplayString, normalizeErrorString } from '@medplum/core';
 import { CodeableConcept, Questionnaire, Reference, Resource, Task } from '@medplum/fhirtypes';
 import {
   CodeableConceptDisplay,
@@ -9,7 +9,7 @@ import {
   Timeline,
   useMedplum,
   useResource,
-} from 'workspace:workspace:@medplum/react';
+} from '@medplum/react';
 import { IconFilePencil, IconHeart, IconListCheck, IconReportMedical } from '@tabler/icons-react';
 import { Fragment, ReactNode, useEffect, useState } from 'react';
 import { usePatient } from '../../hooks/usePatient';

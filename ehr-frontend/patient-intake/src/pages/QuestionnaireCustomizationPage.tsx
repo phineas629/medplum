@@ -1,6 +1,6 @@
-import { normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { normalizeErrorString } from '@medplum/core';
 import { Questionnaire } from '@medplum/fhirtypes';
-import { Document, QuestionnaireBuilder, useMedplum, useMedplumProfile, useResource } from 'workspace:workspace:@medplum/react';
+import { Document, QuestionnaireBuilder, useMedplum, useMedplumProfile, useResource } from '@medplum/react';
 import { useCallback } from 'react';
 import { showNotification } from '@mantine/notifications';
 import { Loading } from '../components/Loading';

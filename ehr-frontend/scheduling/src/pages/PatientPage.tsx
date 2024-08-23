@@ -1,5 +1,5 @@
 import { Grid, Loader } from '@mantine/core';
-import { Document, PatientSummary, useResource } from 'workspace:workspace:@medplum/react';
+import { Document, PatientSummary, useResource } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 import { PatientDetails } from '../components/PatientDetails';
 import { PatientActions } from '../components/PatientActions';

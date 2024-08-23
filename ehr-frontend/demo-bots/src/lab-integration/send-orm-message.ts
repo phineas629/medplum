@@ -7,7 +7,7 @@ import {
   Hl7Message,
   Hl7Segment,
   MedplumClient,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import { HumanName, Patient, QuestionnaireResponse, Reference, ServiceRequest, Specimen } from '@medplum/fhirtypes';
 
 import Client from 'ssh2-sftp-client';

@@ -6,8 +6,8 @@ import {
   Operator,
   parseSearchDefinition,
   SearchRequest,
-} from 'workspace:workspace:@medplum/core';
-import { Document, Loading, SearchControl, useMedplum } from 'workspace:workspace:@medplum/react';
+} from '@medplum/core';
+import { Document, Loading, SearchControl, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CreateCoverageModal } from '../components/CreateCoverageModal';

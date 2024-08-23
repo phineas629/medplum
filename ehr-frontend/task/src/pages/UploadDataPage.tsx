@@ -6,8 +6,8 @@ import {
   getReferenceString,
   isOk,
   normalizeErrorString,
-} from 'workspace:workspace:@medplum/core';
-import { Document, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+} from '@medplum/core';
+import { Document, useMedplum, useMedplumProfile } from '@medplum/react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { showNotification } from '@mantine/notifications';

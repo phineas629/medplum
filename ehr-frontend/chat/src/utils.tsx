@@ -1,4 +1,4 @@
-import { Filter, getReferenceString, Operator, parseReference, SearchRequest } from 'workspace:workspace:@medplum/core';
+import { Filter, getReferenceString, Operator, parseReference, SearchRequest } from '@medplum/core';
 import {
   Communication,
   Encounter,

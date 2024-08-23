@@ -1,6 +1,6 @@
 import { Grid, Paper } from '@mantine/core';
 import { Encounter, Patient, Reference } from '@medplum/fhirtypes';
-import { Document, Loading, PatientSummary, useMedplum, useResource } from 'workspace:workspace:@medplum/react';
+import { Document, Loading, PatientSummary, useMedplum, useResource } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { EncounterActions } from '../components/EncounterActions';

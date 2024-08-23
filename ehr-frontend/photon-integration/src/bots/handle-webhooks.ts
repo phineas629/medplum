@@ -1,4 +1,4 @@
-import { BotEvent, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, MedplumClient } from '@medplum/core';
 import { createHmac } from 'crypto';
 import { PhotonWebhook } from './../photon-types';
 

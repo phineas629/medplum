@@ -1,7 +1,7 @@
 import { Alert, Box, Button, Group, Modal, NumberInput, Stack, Table, Title } from '@mantine/core';
-import { createReference, formatDate, formatDateTime, formatObservationValue, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { createReference, formatDate, formatDateTime, formatObservationValue, getReferenceString } from '@medplum/core';
 import { Observation, ObservationComponent, Patient } from '@medplum/fhirtypes';
-import { Document, Form, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, Form, useMedplum } from '@medplum/react';
 import { IconAlertCircle } from '@tabler/icons-react';
 import { ChartData, ChartDataset } from 'chart.js';
 import { useEffect, useState } from 'react';

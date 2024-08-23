@@ -1,4 +1,4 @@
-import { BotEvent, getReferenceString, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, getReferenceString, MedplumClient } from '@medplum/core';
 import { Coding, CoverageEligibilityRequest, CoverageEligibilityResponse } from '@medplum/fhirtypes';
 
 /**

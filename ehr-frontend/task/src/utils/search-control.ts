@@ -1,4 +1,4 @@
-import { Filter, Operator, SearchRequest, SortRule } from 'workspace:workspace:@medplum/core';
+import { Filter, Operator, SearchRequest, SortRule } from '@medplum/core';
 
 // Get the default fields for a given resource type
 function getDefaultFields(resourceType: string): string[] {

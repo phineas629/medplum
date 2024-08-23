@@ -1,5 +1,5 @@
 import { ResourceType } from '@medplum/fhirtypes';
-import { ResourceHistoryTable } from 'workspace:workspace:@medplum/react';
+import { ResourceHistoryTable } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 export function ResourceHistoryPage(): JSX.Element | null {

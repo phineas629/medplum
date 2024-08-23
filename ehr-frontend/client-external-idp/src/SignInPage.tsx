@@ -1,5 +1,5 @@
 import { Button, Stack, Title } from '@mantine/core';
-import { useMedplum, Document, useMedplumNavigate } from 'workspace:workspace:@medplum/react';
+import { useMedplum, Document, useMedplumNavigate } from '@medplum/react';
 import { useCallback, useEffect } from 'react';
 
 /**

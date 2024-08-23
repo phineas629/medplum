@@ -1,4 +1,4 @@
-import { BotEvent, createReference, getQuestionnaireAnswers, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, createReference, getQuestionnaireAnswers, MedplumClient } from '@medplum/core';
 import { Communication, Patient, QuestionnaireResponse, ServiceRequest } from '@medplum/fhirtypes';
 
 export async function handler(medplum: MedplumClient, event: BotEvent): Promise<any> {

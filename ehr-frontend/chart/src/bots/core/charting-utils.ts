@@ -1,4 +1,4 @@
-import { getReferenceString } from 'workspace:workspace:@medplum/core';
+import { getReferenceString } from '@medplum/core';
 import {
   Bundle,
   BundleEntry,

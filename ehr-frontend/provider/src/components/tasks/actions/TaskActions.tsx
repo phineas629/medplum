@@ -1,6 +1,6 @@
 import { Stack, Title } from '@mantine/core';
 import { Task } from '@medplum/fhirtypes';
-import { Loading, useResource } from 'workspace:workspace:@medplum/react';
+import { Loading, useResource } from '@medplum/react';
 import { AddNote } from './AddNote';
 import { AddDueDate } from './AddDueDate';
 import { UpdateBusinessStatus } from './UpdateBusinessStatus';

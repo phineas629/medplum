@@ -1,4 +1,4 @@
-import { BotEvent, getQuestionnaireAnswers, LOINC, MedplumClient, SNOMED } from 'workspace:workspace:@medplum/core';
+import { BotEvent, getQuestionnaireAnswers, LOINC, MedplumClient, SNOMED } from '@medplum/core';
 import {
   Bundle,
   ClinicalImpression,

@@ -1,4 +1,4 @@
-import { BotEvent, createReference, getQuestionnaireAnswers, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, createReference, getQuestionnaireAnswers, MedplumClient } from '@medplum/core';
 import {
   Address,
   HumanName,

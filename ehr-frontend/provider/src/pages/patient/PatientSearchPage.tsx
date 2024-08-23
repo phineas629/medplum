@@ -1,6 +1,6 @@
 import { Paper } from '@mantine/core';
-import { DEFAULT_SEARCH_COUNT, formatSearchQuery, parseSearchRequest, SearchRequest } from 'workspace:workspace:@medplum/core';
-import { Loading, SearchControl, useMedplum } from 'workspace:workspace:@medplum/react';
+import { DEFAULT_SEARCH_COUNT, formatSearchQuery, parseSearchRequest, SearchRequest } from '@medplum/core';
+import { Loading, SearchControl, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { usePatient } from '../../hooks/usePatient';

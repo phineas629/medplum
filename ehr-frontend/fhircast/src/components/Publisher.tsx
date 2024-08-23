@@ -1,6 +1,6 @@
 import { Button, Stack, TextInput, Title } from '@mantine/core';
-import { FhircastEventContext } from 'workspace:workspace:@medplum/core';
-import { Document, useMedplum } from 'workspace:workspace:@medplum/react';
+import { FhircastEventContext } from '@medplum/core';
+import { Document, useMedplum } from '@medplum/react';
 import { useState } from 'react';
 import TopicGenerator from './TopicGenerator';
 

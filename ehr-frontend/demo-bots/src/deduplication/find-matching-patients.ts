@@ -1,4 +1,4 @@
-import { BotEvent, MedplumClient, createReference, getReferenceString, resolveId } from 'workspace:workspace:@medplum/core';
+import { BotEvent, MedplumClient, createReference, getReferenceString, resolveId } from '@medplum/core';
 import { Patient, RiskAssessment, Task } from '@medplum/fhirtypes';
 
 /**

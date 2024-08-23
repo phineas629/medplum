@@ -1,8 +1,8 @@
 import { MantineProvider, MantineThemeOverride } from '@mantine/core';
 import '@mantine/core/styles.css';
-import { MedplumClient } from 'workspace:workspace:@medplum/core';
-import { MedplumProvider } from 'workspace:workspace:@medplum/react';
-import 'workspace:workspace:@medplum/react/styles.css';
+import { MedplumClient } from '@medplum/core';
+import { MedplumProvider } from '@medplum/react';
+import '@medplum/react/styles.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';

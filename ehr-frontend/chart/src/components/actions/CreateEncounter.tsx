@@ -1,6 +1,6 @@
 import { Modal } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { getDisplayString, getQuestionnaireAnswers, getReferenceString, normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { getDisplayString, getQuestionnaireAnswers, getReferenceString, normalizeErrorString } from '@medplum/core';
 import {
   Coding,
   Encounter,
@@ -10,7 +10,7 @@ import {
   QuestionnaireResponse,
   Reference,
 } from '@medplum/fhirtypes';
-import { QuestionnaireForm, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { QuestionnaireForm, useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 

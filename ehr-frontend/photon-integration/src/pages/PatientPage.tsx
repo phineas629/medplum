@@ -1,7 +1,7 @@
 import { Loader, Tabs } from '@mantine/core';
-import { capitalize, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { capitalize, getReferenceString } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { Document, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PatientHistory } from '../components/PatientHistory';

@@ -1,4 +1,4 @@
-import { AppShell, Loading, Logo, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { AppShell, Loading, Logo, useMedplum, useMedplumProfile } from '@medplum/react';
 import { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { HomePage } from './HomePage';

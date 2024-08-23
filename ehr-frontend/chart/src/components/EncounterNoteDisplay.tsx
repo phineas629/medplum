@@ -1,12 +1,12 @@
 import { Paper, Stack, Title, TitleOrder } from '@mantine/core';
-import { formatDate } from 'workspace:workspace:@medplum/core';
+import { formatDate } from '@medplum/core';
 import {
   Encounter,
   QuestionnaireResponse,
   QuestionnaireResponseItem,
   QuestionnaireResponseItemAnswer,
 } from '@medplum/fhirtypes';
-import { CodeableConceptDisplay, QuantityDisplay, RangeDisplay } from 'workspace:workspace:@medplum/react';
+import { CodeableConceptDisplay, QuantityDisplay, RangeDisplay } from '@medplum/react';
 
 interface EncounterNoteDisplayProps {
   response: QuestionnaireResponse;

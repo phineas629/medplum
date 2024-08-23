@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@mantine/core';
 import { Questionnaire, QuestionnaireResponse, Task } from '@medplum/fhirtypes';
-import { Document, QuestionnaireForm, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, QuestionnaireForm, useMedplum } from '@medplum/react';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

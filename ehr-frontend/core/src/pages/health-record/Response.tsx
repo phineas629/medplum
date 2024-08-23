@@ -1,7 +1,7 @@
 import { Box, Paper, Stack, Title, TitleOrder } from '@mantine/core';
-import { formatDate } from 'workspace:workspace:@medplum/core';
+import { formatDate } from '@medplum/core';
 import { QuestionnaireResponseItem, QuestionnaireResponseItemAnswer } from '@medplum/fhirtypes';
-import { CodeableConceptDisplay, QuantityDisplay, RangeDisplay, useMedplum } from 'workspace:workspace:@medplum/react';
+import { CodeableConceptDisplay, QuantityDisplay, RangeDisplay, useMedplum } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 export function Response(): JSX.Element {

@@ -1,7 +1,7 @@
 import { Box, Button, InputLabel, LoadingOverlay, NativeSelect, Stack, TextInput, Title } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { AddressInput, Form, ResourceAvatar, useMedplum } from 'workspace:workspace:@medplum/react';
-import { formatFamilyName, formatGivenName, formatHumanName, normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { AddressInput, Form, ResourceAvatar, useMedplum } from '@medplum/react';
+import { formatFamilyName, formatGivenName, formatHumanName, normalizeErrorString } from '@medplum/core';
 import { Address, HumanName, Patient } from '@medplum/fhirtypes';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useState } from 'react';

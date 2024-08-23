@@ -1,6 +1,6 @@
 import { Box, Title } from '@mantine/core';
 import { Immunization } from '@medplum/fhirtypes';
-import { ResourceTable, useMedplum } from 'workspace:workspace:@medplum/react';
+import { ResourceTable, useMedplum } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 import { InfoSection } from '../../components/InfoSection';
 

@@ -1,8 +1,8 @@
 import { Accordion, Button, Group, Title } from '@mantine/core';
-import { createReference, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { createReference, getReferenceString } from '@medplum/core';
 import { Bundle, Communication, Parameters, Patient, Practitioner, Subscription } from '@medplum/fhirtypes';
 import { HomerSimpson, MargeSimpson } from '@medplum/mock';
-import { Document, ResourceName, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { Document, ResourceName, useMedplum, useMedplumProfile } from '@medplum/react';
 import { useState } from 'react';
 import { BundleDisplay } from '../components/BundleDisplay';
 

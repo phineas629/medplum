@@ -1,8 +1,8 @@
 import { Anchor } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { deepClone, normalizeErrorString, normalizeOperationOutcome } from 'workspace:workspace:@medplum/core';
+import { deepClone, normalizeErrorString, normalizeOperationOutcome } from '@medplum/core';
 import { OperationOutcome, Resource } from '@medplum/fhirtypes';
-import { Document, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplum } from '@medplum/react';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ResourceFormWithRequiredProfile } from '../../components/ResourceFormWithRequiredProfile';

@@ -1,5 +1,5 @@
 import { handler } from './test-auth';
-import { allOk } from 'workspace:workspace:@medplum/core';
+import { allOk } from '@medplum/core';
 import { MockClient } from '@medplum/mock';
 
 test.skip('Success', async () => {

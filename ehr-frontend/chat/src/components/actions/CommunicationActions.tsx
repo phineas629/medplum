@@ -1,5 +1,5 @@
 import { Stack, Title } from '@mantine/core';
-import { parseReference } from 'workspace:workspace:@medplum/core';
+import { parseReference } from '@medplum/core';
 import { Communication } from '@medplum/fhirtypes';
 import { AddParticipant } from './AddParticipant';
 import { AddSubject } from './AddSubject';

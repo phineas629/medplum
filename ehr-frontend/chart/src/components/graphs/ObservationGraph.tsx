@@ -1,7 +1,7 @@
 import { Paper } from '@mantine/core';
-import { formatDate, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { formatDate, getReferenceString } from '@medplum/core';
 import { Coding, Observation, ObservationComponent, Patient } from '@medplum/fhirtypes';
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { LineChart } from './LineChart';
 import { measurementStyles, ObservationType } from './measurement-constants';

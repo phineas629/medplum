@@ -4,11 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build",
-    "dev": "vite",
-    "lint": "eslint .",
+    "build": "next build",
+    "dev": "next dev",
     "start": "next start",
-    "test": "vitest"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@mantine/core": "7.12.0",

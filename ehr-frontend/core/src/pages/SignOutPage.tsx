@@ -1,4 +1,4 @@
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { useMedplum } from '@medplum/react';
 import { useEffect } from 'react';
 
 export function SignOutPage(): null {

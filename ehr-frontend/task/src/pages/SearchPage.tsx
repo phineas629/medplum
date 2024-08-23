@@ -1,6 +1,6 @@
 import { Tabs } from '@mantine/core';
-import { Operator, SearchRequest, formatSearchQuery, getReferenceString, parseSearchRequest } from 'workspace:workspace:@medplum/core';
-import { Document, Loading, SearchControl, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Operator, SearchRequest, formatSearchQuery, getReferenceString, parseSearchRequest } from '@medplum/core';
+import { Document, Loading, SearchControl, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CreateTaskModal } from '../components/actions/CreateTaskModal';

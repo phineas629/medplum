@@ -1,4 +1,4 @@
-import { getReferenceString, MedplumClient, parseReference } from 'workspace:workspace:@medplum/core';
+import { getReferenceString, MedplumClient, parseReference } from '@medplum/core';
 import { Bundle, BundleEntry, Communication, Practitioner, Reference, ResourceType, Task } from '@medplum/fhirtypes';
 
 /**

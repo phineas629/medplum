@@ -1,8 +1,8 @@
 import { Modal, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { getReferenceString } from 'workspace:workspace:@medplum/core';
+import { getReferenceString } from '@medplum/core';
 import { Resource } from '@medplum/fhirtypes';
-import { ResourceForm, useMedplum } from 'workspace:workspace:@medplum/react';
+import { ResourceForm, useMedplum } from '@medplum/react';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 

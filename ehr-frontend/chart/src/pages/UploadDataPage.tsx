@@ -1,8 +1,8 @@
 import { Button, LoadingOverlay } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { capitalize, getReferenceString, isOk, MedplumClient, normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { capitalize, getReferenceString, isOk, MedplumClient, normalizeErrorString } from '@medplum/core';
 import { Bot, Bundle, BundleEntry, Practitioner } from '@medplum/fhirtypes';
-import { Document, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useCallback, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';

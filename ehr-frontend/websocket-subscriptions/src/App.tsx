@@ -1,4 +1,4 @@
-import { ProfileResource, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { ProfileResource, getReferenceString } from '@medplum/core';
 import {
   AppShell,
   ErrorBoundary,
@@ -7,7 +7,7 @@ import {
   NotificationIcon,
   useMedplum,
   useMedplumProfile,
-} from 'workspace:workspace:@medplum/react';
+} from '@medplum/react';
 import { IconClipboardCheck, IconHome, IconMail } from '@tabler/icons-react';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';

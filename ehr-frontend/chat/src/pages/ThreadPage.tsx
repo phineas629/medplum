@@ -1,7 +1,7 @@
 import { Anchor, Grid, GridCol, List, Paper, Stack, Title } from '@mantine/core';
-import { resolveId } from 'workspace:workspace:@medplum/core';
+import { resolveId } from '@medplum/core';
 import { Communication, Patient } from '@medplum/fhirtypes';
-import { PatientSummary, ThreadChat, useMedplum } from 'workspace:workspace:@medplum/react';
+import { PatientSummary, ThreadChat, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CommunicationActions } from '../components/actions/CommunicationActions';

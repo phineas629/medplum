@@ -1,7 +1,7 @@
 import { Loader, Tabs } from '@mantine/core';
-import { getReferenceString } from 'workspace:workspace:@medplum/core';
+import { getReferenceString } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { useResource } from 'workspace:workspace:@medplum/react';
+import { useResource } from '@medplum/react';
 import { Fragment } from 'react';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { PatientHeader } from './PatientHeader';

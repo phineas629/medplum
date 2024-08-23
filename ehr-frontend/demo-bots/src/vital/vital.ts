@@ -1,4 +1,4 @@
-import { BotEvent, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, MedplumClient } from '@medplum/core';
 import { ProjectSetting, Questionnaire, QuestionnaireItem, QuestionnaireItemAnswerOption } from '@medplum/fhirtypes';
 
 type GetLabTestEvent = {

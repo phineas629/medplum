@@ -1,4 +1,4 @@
-import { BotEvent, CPT, getCodeBySystem, getIdentifier, getReferenceString, ICD10, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, CPT, getCodeBySystem, getIdentifier, getReferenceString, ICD10, MedplumClient } from '@medplum/core';
 import {
   Address,
   Coverage,

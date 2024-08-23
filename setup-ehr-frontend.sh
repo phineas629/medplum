@@ -7,6 +7,9 @@ print_status() {
     echo "----------------------------------------"
 }
 
+#TODO: don't automate for nextjs, nextauth, and react-native-example since they have their own setup scripts
+
+
 # Create ehr-frontend directory if it doesn't exist
 if [ ! -d "ehr-frontend" ]; then
     mkdir -p ehr-frontend
@@ -74,21 +77,8 @@ fi
 # Update root package.json
 jq '
   .workspaces = [
-    "ehr-frontend/core",
-    "ehr-frontend/chat",
-    "ehr-frontend/client-external-idp",
-    "ehr-frontend/eligibility",
-    "ehr-frontend/fhircast",
-    "ehr-frontend/hello-world",
-    "ehr-frontend/live-chat",
-    "ehr-frontend/nextjs",
-    "ehr-frontend/patient-intake",
-    "ehr-frontend/photon-integration",
-    "ehr-frontend/provider",
-    "ehr-frontend/react-native-example",
-    "ehr-frontend/scheduling",
-    "ehr-frontend/task",
-    "ehr-frontend/websocket-subscriptions"
+    "packages/*",
+    "ehr-frontend"
   ]
 ' package.json > temp.json && mv temp.json package.json
 print_status "Updated root package.json"
@@ -126,9 +116,6 @@ fi
 # Create index.ts for ehr-frontend if it doesn't exist
 if [ ! -f "ehr-frontend/index.ts" ]; then
     cat << EOF > ehr-frontend/index.ts
-// Export common utilities or components
-export * from './utils/common';
-export * from './components/shared';
 
 // Re-export sub-projects if needed
 export { App as CoreApp } from './core/src/App';
@@ -197,8 +184,8 @@ fi
 
     # Update import statements in TypeScript files
     if [ -d "$project/src" ]; then
-        find "$project/src" -name "*.ts" -o -name "*.tsx" | xargs sed -i '' 's/@medplum\/core/workspace:@medplum\/core/g'
-        find "$project/src" -name "*.ts" -o -name "*.tsx" | xargs sed -i '' 's/@medplum\/react/workspace:@medplum\/react/g'
+        find "$project/src" -name "*.ts" -o -name "*.tsx" | xargs sed -i '' 's|@medplum/core|workspace:@medplum/core|g; s|workspace:workspace:@medplum/core|workspace:@medplum/core|g'
+        find "$project/src" -name "*.ts" -o -name "*.tsx" | xargs sed -i '' 's|@medplum/react|workspace:@medplum/react|g; s|workspace:workspace:@medplum/react|workspace:@medplum/react|g'
         print_status "Updated import statements for $project_name"
     else
         print_status "src directory not found in $project_name"
@@ -234,8 +221,12 @@ else
     print_status "Root-level tsconfig.json already exists"
 fi
 
-# Run npm install to update workspace
-npm install
-print_status "Ran npm install to update workspace"
+# ... existing code ...
 
-print_status "Setup complete!"
+# Run npm install to update workspace
+print_status "Running npm install in ehr-frontend folder"
+(
+    cd ehr-frontend
+    npm install
+)
+print_status "Completed npm install in ehr-frontend folder"

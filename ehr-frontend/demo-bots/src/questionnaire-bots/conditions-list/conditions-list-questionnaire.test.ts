@@ -1,4 +1,4 @@
-import { SNOMED, createReference, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { SNOMED, createReference, getReferenceString } from '@medplum/core';
 import { Questionnaire, QuestionnaireResponse } from '@medplum/fhirtypes';
 import { DrAliceSmith, HomerSimpson, MockClient } from '@medplum/mock';
 import { expect, test } from 'vitest';

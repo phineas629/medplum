@@ -1,4 +1,4 @@
-import { BotEvent, Hl7Message, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, Hl7Message, MedplumClient } from '@medplum/core';
 import { Encounter, Patient } from '@medplum/fhirtypes';
 
 export async function handler(medplum: MedplumClient, event: BotEvent<Hl7Message>): Promise<Hl7Message> {

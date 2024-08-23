@@ -1,6 +1,6 @@
-import { formatSearchQuery, Operator, SearchRequest } from 'workspace:workspace:@medplum/core';
+import { formatSearchQuery, Operator, SearchRequest } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { SearchControl } from 'workspace:workspace:@medplum/react';
+import { SearchControl } from '@medplum/react';
 import { useNavigate } from 'react-router-dom';
 
 interface PatientObservationsProps {

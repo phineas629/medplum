@@ -1,4 +1,4 @@
-import { BotEvent, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, MedplumClient } from '@medplum/core';
 import { DiagnosticReport } from '@medplum/fhirtypes';
 
 export async function handler(medplum: MedplumClient, event: BotEvent): Promise<any> {

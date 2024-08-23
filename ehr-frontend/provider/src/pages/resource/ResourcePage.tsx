@@ -1,7 +1,7 @@
 import { Stack, Tabs } from '@mantine/core';
-import { getReferenceString } from 'workspace:workspace:@medplum/core';
+import { getReferenceString } from '@medplum/core';
 import { Resource, ResourceType } from '@medplum/fhirtypes';
-import { Document, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplum } from '@medplum/react';
 import { useCallback, useEffect, useState } from 'react';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import classes from './ResourcePage.module.css';

@@ -1,7 +1,7 @@
 import { Button, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { createReference, normalizeErrorString, parseReference, PatchOperation } from 'workspace:workspace:@medplum/core';
+import { createReference, normalizeErrorString, parseReference, PatchOperation } from '@medplum/core';
 import {
   Communication,
   Encounter,
@@ -12,7 +12,7 @@ import {
   Reference,
   Resource,
 } from '@medplum/fhirtypes';
-import { ResourceForm, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { ResourceForm, useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import { BotEvent, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, MedplumClient } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
 import { createPrivateKey, randomBytes } from 'crypto';
 import { SignJWT } from 'jose';

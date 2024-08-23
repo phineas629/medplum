@@ -1,5 +1,5 @@
 import { Button, Group, List, Stack, Text, Title } from '@mantine/core';
-import { Document } from 'workspace:workspace:@medplum/react';
+import { Document } from '@medplum/react';
 import { Link } from 'react-router-dom';
 
 export default function DemoInstructionsPage(): JSX.Element {

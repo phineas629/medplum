@@ -1,4 +1,4 @@
-import { ContentType, indexSearchParameterBundle, indexStructureDefinitionBundle } from 'workspace:workspace:@medplum/core';
+import { ContentType, indexSearchParameterBundle, indexStructureDefinitionBundle } from '@medplum/core';
 import { readJson } from '@medplum/definitions';
 import { Bot, Bundle, CoverageEligibilityRequest, Reference, SearchParameter } from '@medplum/fhirtypes';
 import { MockClient } from '@medplum/mock';

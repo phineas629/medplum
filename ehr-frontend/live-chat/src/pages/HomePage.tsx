@@ -1,5 +1,5 @@
 import { ActionIcon, Button, Stack, TextInput, Title } from '@mantine/core';
-import { createReference, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { createReference, getReferenceString } from '@medplum/core';
 import { Communication, Patient, Practitioner } from '@medplum/fhirtypes';
 import { HomerSimpson } from '@medplum/mock';
 import {
@@ -11,7 +11,7 @@ import {
   ThreadChat,
   useMedplum,
   useMedplumProfile,
-} from 'workspace:workspace:@medplum/react';
+} from '@medplum/react';
 import { IconArrowRight } from '@tabler/icons-react';
 import { useEffect, useRef, useState } from 'react';
 

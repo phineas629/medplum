@@ -1,4 +1,4 @@
-import { ProfileResource, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { ProfileResource, getReferenceString } from '@medplum/core';
 import {
   AppShell,
   Loading,
@@ -7,7 +7,7 @@ import {
   useMedplum,
   useMedplumNavigate,
   useMedplumProfile,
-} from 'workspace:workspace:@medplum/react';
+} from '@medplum/react';
 import {
   IconCalendar,
   IconClipboardCheck,

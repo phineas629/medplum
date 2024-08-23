@@ -4,7 +4,7 @@ import {
   createReference,
   indexSearchParameterBundle,
   indexStructureDefinitionBundle,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 // start-block definitions-import
 import { SEARCH_PARAMETER_BUNDLE_FILES, readJson } from '@medplum/definitions';
 // end-block definitions-import

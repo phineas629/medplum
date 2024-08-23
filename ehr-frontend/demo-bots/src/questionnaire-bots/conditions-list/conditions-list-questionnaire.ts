@@ -1,4 +1,4 @@
-import { BotEvent, MedplumClient, SNOMED } from 'workspace:workspace:@medplum/core';
+import { BotEvent, MedplumClient, SNOMED } from '@medplum/core';
 import { Condition, Patient, QuestionnaireResponse, QuestionnaireResponseItem, Reference } from '@medplum/fhirtypes';
 
 export async function handler(medplum: MedplumClient, event: BotEvent<QuestionnaireResponse>): Promise<any> {

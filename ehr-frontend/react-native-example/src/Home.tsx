@@ -1,6 +1,6 @@
-import { LoginAuthenticationResponse, getDisplayString } from 'workspace:workspace:@medplum/core';
+import { LoginAuthenticationResponse, getDisplayString } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { useMedplum, useMedplumContext, useMedplumProfile, useSubscription } from 'workspace:workspace:@medplum/react-hooks';
+import { useMedplum, useMedplumContext, useMedplumProfile, useSubscription } from '@medplum/react-hooks';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';

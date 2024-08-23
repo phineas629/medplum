@@ -1,5 +1,5 @@
 import { Communication } from '@medplum/fhirtypes';
-import { Loading, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Loading, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MessagePage } from './MessagePage';

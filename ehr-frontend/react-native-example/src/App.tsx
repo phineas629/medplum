@@ -1,6 +1,6 @@
-import { MedplumClient } from 'workspace:workspace:@medplum/core';
+import { MedplumClient } from '@medplum/core';
 import { ExpoClientStorage, initWebSocketManager, polyfillMedplumWebAPIs } from '@medplum/expo-polyfills';
-import { MedplumProvider } from 'workspace:workspace:@medplum/react-hooks';
+import { MedplumProvider } from '@medplum/react-hooks';
 import Home from './Home';
 
 // This is a module to get the Medplum client working on React Native by polyfilling a few Web APIs that are missing from the React Native runtime

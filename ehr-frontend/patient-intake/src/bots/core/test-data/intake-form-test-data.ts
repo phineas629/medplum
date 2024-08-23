@@ -1,4 +1,4 @@
-import { getReferenceString } from 'workspace:workspace:@medplum/core';
+import { getReferenceString } from '@medplum/core';
 import { Organization, Questionnaire, QuestionnaireResponse } from '@medplum/fhirtypes';
 import coreBundle from '../../../../data/core/patient-intake-questionnaire.json';
 

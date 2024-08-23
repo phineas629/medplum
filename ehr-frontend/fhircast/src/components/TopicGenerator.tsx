@@ -1,5 +1,5 @@
 import { Button, Stack, TextInput } from '@mantine/core';
-import { usePrevious } from 'workspace:workspace:@medplum/react';
+import { usePrevious } from '@medplum/react';
 import { useEffect, useState } from 'react';
 
 interface TopicGeneratorProps {

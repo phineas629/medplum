@@ -1,6 +1,6 @@
 import { Stack, Title } from '@mantine/core';
-import { getDisplayString } from 'workspace:workspace:@medplum/core';
-import { ResourceTable, useResource } from 'workspace:workspace:@medplum/react';
+import { getDisplayString } from '@medplum/core';
+import { ResourceTable, useResource } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 /**

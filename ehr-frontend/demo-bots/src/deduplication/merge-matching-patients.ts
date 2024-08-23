@@ -6,7 +6,7 @@ import {
   getQuestionnaireAnswers,
   getReferenceString,
   resolveId,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import {
   Identifier,
   Patient,

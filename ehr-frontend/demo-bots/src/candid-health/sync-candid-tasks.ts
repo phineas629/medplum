@@ -1,4 +1,4 @@
-import { BotEvent, createReference, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { BotEvent, createReference, MedplumClient } from '@medplum/core';
 import fetch from 'node-fetch';
 
 const CANDID_API_URL = 'https://api-staging.joincandidhealth.com/api/v1/';

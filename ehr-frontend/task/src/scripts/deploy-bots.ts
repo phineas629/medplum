@@ -1,4 +1,4 @@
-import { ContentType } from 'workspace:workspace:@medplum/core';
+import { ContentType } from '@medplum/core';
 import { Bot, Bundle, BundleEntry, Subscription } from '@medplum/fhirtypes';
 import fs from 'fs';
 import path from 'path';

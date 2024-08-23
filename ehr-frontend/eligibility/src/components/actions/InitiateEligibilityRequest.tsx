@@ -1,7 +1,7 @@
 import { Button, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { getQuestionnaireAnswers, getReferenceString, normalizeErrorString, parseReference } from 'workspace:workspace:@medplum/core';
+import { getQuestionnaireAnswers, getReferenceString, normalizeErrorString, parseReference } from '@medplum/core';
 import {
   Coding,
   Coverage,
@@ -12,7 +12,7 @@ import {
   Questionnaire,
   QuestionnaireResponse,
 } from '@medplum/fhirtypes';
-import { QuestionnaireForm, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { QuestionnaireForm, useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 

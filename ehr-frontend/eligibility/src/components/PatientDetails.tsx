@@ -1,8 +1,8 @@
 import { Tabs } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { getReferenceString, normalizeErrorString, parseSearchDefinition } from 'workspace:workspace:@medplum/core';
+import { getReferenceString, normalizeErrorString, parseSearchDefinition } from '@medplum/core';
 import { Patient, Resource } from '@medplum/fhirtypes';
-import { Document, ResourceForm, ResourceHistoryTable, ResourceTable, SearchControl, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, ResourceForm, ResourceHistoryTable, ResourceTable, SearchControl, useMedplum } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { cleanResource } from './utils';

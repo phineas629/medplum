@@ -1,5 +1,5 @@
 import { Container, Group, Text, Title } from '@mantine/core';
-import { getDisplayString } from 'workspace:workspace:@medplum/core';
+import { getDisplayString } from '@medplum/core';
 import { Encounter, Patient } from '@medplum/fhirtypes';
 
 interface EncounterHeaderProps {

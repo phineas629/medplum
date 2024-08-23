@@ -1,6 +1,6 @@
 import { Accordion, ActionIcon, Chip, Group } from '@mantine/core';
 import { Bundle, Communication, Reference } from '@medplum/fhirtypes';
-import { useMedplum } from 'workspace:workspace:@medplum/react';
+import { useMedplum } from '@medplum/react';
 import { IconArrowNarrowRight, IconCheck } from '@tabler/icons-react';
 import { SyntheticEvent, useCallback } from 'react';
 

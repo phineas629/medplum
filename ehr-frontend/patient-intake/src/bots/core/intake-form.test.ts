@@ -21,7 +21,7 @@ import {
   getReferenceString,
   indexSearchParameterBundle,
   indexStructureDefinitionBundle,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import {
   consentCategoryMapping,
   consentPolicyRuleMapping,

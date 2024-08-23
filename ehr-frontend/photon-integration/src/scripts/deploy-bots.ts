@@ -2,7 +2,7 @@ import { Bundle, BundleEntry } from '@medplum/fhirtypes';
 import path from 'path';
 import fs from 'fs';
 import { randomUUID } from 'crypto';
-import { ContentType } from 'workspace:workspace:@medplum/core';
+import { ContentType } from '@medplum/core';
 
 interface BotDescription {
   src: string;

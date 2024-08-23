@@ -1,5 +1,5 @@
 import { Schedule } from '@medplum/fhirtypes';
-import { Document, Scheduler, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Document, Scheduler, useMedplum } from '@medplum/react';
 
 export function GetCare(): JSX.Element {
   const medplum = useMedplum();

@@ -1,7 +1,7 @@
 import { Loader, Paper, ScrollArea, Tabs } from '@mantine/core';
-import { getReferenceString, isOk } from 'workspace:workspace:@medplum/core';
+import { getReferenceString, isOk } from '@medplum/core';
 import { OperationOutcome } from '@medplum/fhirtypes';
-import { Document, OperationOutcomeAlert, PatientSummary } from 'workspace:workspace:@medplum/react';
+import { Document, OperationOutcomeAlert, PatientSummary } from '@medplum/react';
 import { useCallback, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate, Location } from 'react-router-dom';
 import { usePatient } from '../../hooks/usePatient';

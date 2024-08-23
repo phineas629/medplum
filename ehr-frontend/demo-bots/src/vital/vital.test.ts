@@ -1,4 +1,4 @@
-import { MedplumClient, indexSearchParameterBundle, indexStructureDefinitionBundle } from 'workspace:workspace:@medplum/core';
+import { MedplumClient, indexSearchParameterBundle, indexStructureDefinitionBundle } from '@medplum/core';
 import { SEARCH_PARAMETER_BUNDLE_FILES, readJson } from '@medplum/definitions';
 import {
   Bundle,

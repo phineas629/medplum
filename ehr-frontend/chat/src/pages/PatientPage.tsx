@@ -1,8 +1,8 @@
 import { Grid, GridCol, Loader } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { normalizeErrorString } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { PatientSummary, useMedplum } from 'workspace:workspace:@medplum/react';
+import { PatientSummary, useMedplum } from '@medplum/react';
 import { IconCircleOff } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

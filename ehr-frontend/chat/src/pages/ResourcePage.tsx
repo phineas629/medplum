@@ -1,6 +1,6 @@
 import { Grid, Tabs, Title } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { getDisplayString, normalizeErrorString } from 'workspace:workspace:@medplum/core';
+import { getDisplayString, normalizeErrorString } from '@medplum/core';
 import { Patient, Reference, Resource, ResourceType } from '@medplum/fhirtypes';
 import {
   Document,
@@ -9,7 +9,7 @@ import {
   ResourceHistoryTable,
   ResourceTable,
   useMedplum,
-} from 'workspace:workspace:@medplum/react';
+} from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';

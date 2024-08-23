@@ -1,6 +1,6 @@
 import { Loader, Tabs } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { getReferenceString, normalizeErrorString, Operator, SearchRequest } from 'workspace:workspace:@medplum/core';
+import { getReferenceString, normalizeErrorString, Operator, SearchRequest } from '@medplum/core';
 import { Patient, Practitioner, Resource } from '@medplum/fhirtypes';
 import {
   Document,
@@ -11,7 +11,7 @@ import {
   useMedplum,
   useMedplumProfile,
   useResource,
-} from 'workspace:workspace:@medplum/react';
+} from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PatientHeader } from '../pages/PatientHeader';

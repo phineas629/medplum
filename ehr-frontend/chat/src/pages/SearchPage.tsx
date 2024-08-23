@@ -1,7 +1,7 @@
 import { Tabs } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { formatSearchQuery, getReferenceString, Operator, parseSearchRequest, SearchRequest } from 'workspace:workspace:@medplum/core';
-import { Document, Loading, SearchControl, useMedplum } from 'workspace:workspace:@medplum/react';
+import { formatSearchQuery, getReferenceString, Operator, parseSearchRequest, SearchRequest } from '@medplum/core';
+import { Document, Loading, SearchControl, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CreateThread } from '../components/actions/CreateThread';

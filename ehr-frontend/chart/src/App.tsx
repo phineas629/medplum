@@ -1,4 +1,4 @@
-import { AppShell, ErrorBoundary, Loading, Logo, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { AppShell, ErrorBoundary, Loading, Logo, useMedplum, useMedplumProfile } from '@medplum/react';
 import {
   IconClipboardHeart,
   IconClipboardList,

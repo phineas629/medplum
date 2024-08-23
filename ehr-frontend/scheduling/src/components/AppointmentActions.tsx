@@ -1,9 +1,9 @@
 import { Button, Stack, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
-import { createReference, normalizeErrorString, resolveId } from 'workspace:workspace:@medplum/core';
+import { createReference, normalizeErrorString, resolveId } from '@medplum/core';
 import { Appointment, Encounter, Patient, Practitioner, Reference } from '@medplum/fhirtypes';
-import { Loading, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Loading, useMedplum } from '@medplum/react';
 import { IconCancel, IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

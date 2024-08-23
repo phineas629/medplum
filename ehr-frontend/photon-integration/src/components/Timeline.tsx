@@ -1,4 +1,4 @@
-import { PatientTimeline } from 'workspace:workspace:@medplum/react';
+import { PatientTimeline } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 /*

@@ -1,7 +1,7 @@
 import { Blockquote, Stack } from '@mantine/core';
-import { getReferenceString } from 'workspace:workspace:@medplum/core';
+import { getReferenceString } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { Loading, NoteDisplay, useSearchResources } from 'workspace:workspace:@medplum/react';
+import { Loading, NoteDisplay, useSearchResources } from '@medplum/react';
 
 interface ClinicalImpressionDisplayProps {
   readonly patient: Patient;

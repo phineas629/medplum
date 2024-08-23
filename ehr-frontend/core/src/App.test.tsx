@@ -1,6 +1,6 @@
 import { MantineProvider } from '@mantine/core';
 import { MockClient } from '@medplum/mock';
-import { MedplumProvider } from 'workspace:workspace:@medplum/react';
+import { MedplumProvider } from '@medplum/react';
 import { act, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { App } from './App';

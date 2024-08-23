@@ -7,7 +7,7 @@ import {
   indexStructureDefinitionBundle,
   MedplumClient,
   SNOMED,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import { readJson, SEARCH_PARAMETER_BUNDLE_FILES } from '@medplum/definitions';
 import { Bundle, Coverage, Encounter, Patient, SearchParameter } from '@medplum/fhirtypes';
 import { DrAliceSmith, MockClient } from '@medplum/mock';

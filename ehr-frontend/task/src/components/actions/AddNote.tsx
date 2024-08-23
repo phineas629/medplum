@@ -7,9 +7,9 @@ import {
   MedplumClient,
   normalizeErrorString,
   PatchOperation,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import { Annotation, Questionnaire, QuestionnaireResponse, Task } from '@medplum/fhirtypes';
-import { QuestionnaireForm, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { QuestionnaireForm, useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 
 interface AddCommentProps {

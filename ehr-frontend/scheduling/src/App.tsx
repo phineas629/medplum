@@ -1,10 +1,10 @@
-import { AppShell, ErrorBoundary, Loading, Logo, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { AppShell, ErrorBoundary, Loading, Logo, useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconUser, IconClipboard, IconCalendar, IconRobot } from '@tabler/icons-react';
 import { Suspense, useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppointmentDetailPage } from './pages/AppointmentDetailPage';
 import { AppointmentsPage } from './pages/AppointmentsPage';
-import { createReference, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { createReference, getReferenceString } from '@medplum/core';
 import { LandingPage } from './pages/LandingPage';
 import { PatientPage } from './pages/PatientPage';
 import { PatientSchedulePage } from './pages/PatientSchedulePage';

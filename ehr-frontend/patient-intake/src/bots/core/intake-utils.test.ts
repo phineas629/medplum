@@ -2,7 +2,7 @@ import { Bundle, Questionnaire, QuestionnaireResponse, SearchParameter } from '@
 import { getGroupRepeatedAnswers } from './intake-utils';
 import { intakeQuestionnaire, intakeResponse } from './test-data/intake-form-test-data';
 import { MockClient } from '@medplum/mock';
-import { indexSearchParameterBundle, indexStructureDefinitionBundle } from 'workspace:workspace:@medplum/core';
+import { indexSearchParameterBundle, indexStructureDefinitionBundle } from '@medplum/core';
 import { readJson, SEARCH_PARAMETER_BUNDLE_FILES } from '@medplum/definitions';
 
 describe('getAnswers', async () => {

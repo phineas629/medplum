@@ -1,6 +1,6 @@
 import { Button, Flex, Modal } from '@mantine/core';
 import { DiagnosticReport, Task } from '@medplum/fhirtypes';
-import { CodeableConceptDisplay, DiagnosticReportDisplay, useMedplum } from 'workspace:workspace:@medplum/react';
+import { CodeableConceptDisplay, DiagnosticReportDisplay, useMedplum } from '@medplum/react';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { useState } from 'react';
 import { TaskCellProps } from './TaskList';

@@ -1,5 +1,5 @@
 import { Title } from '@mantine/core';
-import { Document, ResourceHistoryTable } from 'workspace:workspace:@medplum/react';
+import { Document, ResourceHistoryTable } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 export function PatientHistory(): JSX.Element {

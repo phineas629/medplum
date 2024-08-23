@@ -1,4 +1,4 @@
-import { ContentType, MedplumClient, createReference, getStatus, isOperationOutcome } from 'workspace:workspace:@medplum/core';
+import { ContentType, MedplumClient, createReference, getStatus, isOperationOutcome } from '@medplum/core';
 import { OperationOutcome, Patient, ServiceRequest } from '@medplum/fhirtypes';
 import { Mock, vi } from 'vitest';
 import {

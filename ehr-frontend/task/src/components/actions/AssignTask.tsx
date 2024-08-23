@@ -1,9 +1,9 @@
 import { Button, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { notifications } from '@mantine/notifications';
-import { getQuestionnaireAnswers, MedplumClient, PatchOperation } from 'workspace:workspace:@medplum/core';
+import { getQuestionnaireAnswers, MedplumClient, PatchOperation } from '@medplum/core';
 import { Questionnaire, QuestionnaireResponse, Reference, Task } from '@medplum/fhirtypes';
-import { QuestionnaireForm, useMedplum } from 'workspace:workspace:@medplum/react';
+import { QuestionnaireForm, useMedplum } from '@medplum/react';
 import { IconCircleCheck, IconCircleOff } from '@tabler/icons-react';
 
 interface AssignTaskProps {

@@ -1,5 +1,5 @@
 import { ResourceType } from '@medplum/fhirtypes';
-import { Document, Loading, ResourceTable, useResource } from 'workspace:workspace:@medplum/react';
+import { Document, Loading, ResourceTable, useResource } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 export function ResourceDetailsPage(): JSX.Element {

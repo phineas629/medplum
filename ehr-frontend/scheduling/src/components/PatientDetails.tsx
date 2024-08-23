@@ -1,7 +1,7 @@
 import { Tabs } from '@mantine/core';
-import { Filter, Operator, SearchRequest } from 'workspace:workspace:@medplum/core';
+import { Filter, Operator, SearchRequest } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { Document, ResourceTable, SearchControl } from 'workspace:workspace:@medplum/react';
+import { Document, ResourceTable, SearchControl } from '@medplum/react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 

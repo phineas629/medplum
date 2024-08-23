@@ -1,5 +1,5 @@
 import { Grid, Paper, Skeleton, Tabs, Title } from '@mantine/core';
-import { formatCodeableConcept, getDisplayString, resolveId } from 'workspace:workspace:@medplum/core';
+import { formatCodeableConcept, getDisplayString, resolveId } from '@medplum/core';
 import { Patient, Task } from '@medplum/fhirtypes';
 import {
   DefaultResourceTimeline,
@@ -8,7 +8,7 @@ import {
   ResourceTable,
   useMedplum,
   useMedplumNavigate,
-} from 'workspace:workspace:@medplum/react';
+} from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TaskActions } from '../components/actions/TaskActions';

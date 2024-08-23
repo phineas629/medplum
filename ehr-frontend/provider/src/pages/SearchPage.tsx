@@ -7,9 +7,9 @@ import {
   parseSearchRequest,
   SearchRequest,
   SortRule,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import { Patient, Reference, Resource, UserConfiguration } from '@medplum/fhirtypes';
-import { Loading, SearchControl, useMedplum } from 'workspace:workspace:@medplum/react';
+import { Loading, SearchControl, useMedplum } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useResourceType } from './resource/useResourceType';

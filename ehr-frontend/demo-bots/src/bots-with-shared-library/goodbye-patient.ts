@@ -1,4 +1,4 @@
-import { MedplumClient, BotEvent } from 'workspace:workspace:@medplum/core';
+import { MedplumClient, BotEvent } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
 import { getPatientName } from './helpers';
 

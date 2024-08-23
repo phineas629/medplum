@@ -1,7 +1,7 @@
 import { Button } from '@mantine/core';
-import { capitalize, getReferenceString, MedplumClient } from 'workspace:workspace:@medplum/core';
+import { capitalize, getReferenceString, MedplumClient } from '@medplum/core';
 import { Binary, Bot, Bundle, BundleEntry, Practitioner } from '@medplum/fhirtypes';
-import { Document, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplum, useMedplumProfile } from '@medplum/react';
 import { useCallback, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import exampleBotData from '../../data/example-bots.json';

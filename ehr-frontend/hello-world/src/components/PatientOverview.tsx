@@ -1,5 +1,5 @@
 import { Title } from '@mantine/core';
-import { Document, ResourceTable } from 'workspace:workspace:@medplum/react';
+import { Document, ResourceTable } from '@medplum/react';
 import { useParams } from 'react-router-dom';
 
 /*

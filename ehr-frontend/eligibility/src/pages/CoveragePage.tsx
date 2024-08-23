@@ -1,7 +1,7 @@
 import { Grid, Paper } from '@mantine/core';
-import { normalizeErrorString, resolveId } from 'workspace:workspace:@medplum/core';
+import { normalizeErrorString, resolveId } from '@medplum/core';
 import { Coverage, Patient } from '@medplum/fhirtypes';
-import { Loading, PatientSummary, useMedplum, useMedplumNavigate } from 'workspace:workspace:@medplum/react';
+import { Loading, PatientSummary, useMedplum, useMedplumNavigate } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CoverageActions } from '../components/actions/CoverageActions';

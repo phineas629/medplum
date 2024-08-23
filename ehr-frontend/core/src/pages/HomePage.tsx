@@ -16,9 +16,9 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
-import { formatHumanName } from 'workspace:workspace:@medplum/core';
+import { formatHumanName } from '@medplum/core';
 import { Patient, Practitioner } from '@medplum/fhirtypes';
-import { useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { useMedplumProfile } from '@medplum/react';
 import { IconChecklist, IconGift, IconSquareCheck } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 import DoctorImage from '../img/homePage/doctor.svg';

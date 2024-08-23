@@ -6,7 +6,7 @@ import {
   HTTP_TERMINOLOGY_HL7_ORG,
   LOINC,
   MedplumClient,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import {
   CodeableConcept,
   Coding,

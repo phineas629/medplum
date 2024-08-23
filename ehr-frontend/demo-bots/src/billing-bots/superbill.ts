@@ -7,7 +7,7 @@ import {
   getQuestionnaireAnswers,
   getReferenceString,
   MedplumClient,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import {
   ChargeItemDefinition,
   Coding,

@@ -1,7 +1,7 @@
 import { Box, Stack, Text, Title, useMantineTheme } from '@mantine/core';
-import { formatDateTime, getReferenceString } from 'workspace:workspace:@medplum/core';
+import { formatDateTime, getReferenceString } from '@medplum/core';
 import { Patient } from '@medplum/fhirtypes';
-import { useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { useMedplum, useMedplumProfile } from '@medplum/react';
 import { IconChevronRight } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 import { InfoButton } from '../../components/InfoButton';

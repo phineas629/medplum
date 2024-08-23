@@ -1,7 +1,7 @@
 import { Paper, Tabs } from '@mantine/core';
-import { Filter, getReferenceString, Operator, SearchRequest } from 'workspace:workspace:@medplum/core';
+import { Filter, getReferenceString, Operator, SearchRequest } from '@medplum/core';
 import { Practitioner } from '@medplum/fhirtypes';
-import { SearchControl, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { SearchControl, useMedplumProfile } from '@medplum/react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 

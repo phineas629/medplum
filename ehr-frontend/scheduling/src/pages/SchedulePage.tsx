@@ -1,7 +1,7 @@
 import { useDisclosure } from '@mantine/hooks';
-import { getReferenceString } from 'workspace:workspace:@medplum/core';
+import { getReferenceString } from '@medplum/core';
 import { Practitioner, Schedule } from '@medplum/fhirtypes';
-import { Document, useMedplumProfile, useSearchResources } from 'workspace:workspace:@medplum/react';
+import { Document, useMedplumProfile, useSearchResources } from '@medplum/react';
 import dayjs from 'dayjs';
 import { useCallback, useContext, useState } from 'react';
 import { Calendar, dayjsLocalizer, Event } from 'react-big-calendar';

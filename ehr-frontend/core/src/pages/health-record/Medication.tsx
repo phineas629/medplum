@@ -1,7 +1,7 @@
 import { Anchor, Box, Button, Modal, Stack, Text, Title } from '@mantine/core';
-import { formatDateTime, formatHumanName, formatTiming } from 'workspace:workspace:@medplum/core';
+import { formatDateTime, formatHumanName, formatTiming } from '@medplum/core';
 import { HumanName, MedicationRequest } from '@medplum/fhirtypes';
-import { ResourceTable, useMedplum } from 'workspace:workspace:@medplum/react';
+import { ResourceTable, useMedplum } from '@medplum/react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { InfoSection } from '../../components/InfoSection';

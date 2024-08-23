@@ -9,9 +9,9 @@ import {
   getExtension,
   getReferenceString,
   normalizeErrorString,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import { Practitioner } from '@medplum/fhirtypes';
-import { AppShell, Loading, Logo, NavbarLink, useMedplum, useMedplumProfile } from 'workspace:workspace:@medplum/react';
+import { AppShell, Loading, Logo, NavbarLink, useMedplum, useMedplumProfile } from '@medplum/react';
 import {
   IconCategory,
   IconChecklist,

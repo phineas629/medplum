@@ -8,7 +8,7 @@ import {
   getIdentifier,
   parseHl7DateTime,
   setIdentifier,
-} from 'workspace:workspace:@medplum/core';
+} from '@medplum/core';
 import {
   Annotation,
   CodeableConcept,

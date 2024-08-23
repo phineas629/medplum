@@ -1,5 +1,5 @@
 import { BackgroundImage, Box, SimpleGrid } from '@mantine/core';
-import { SignInForm } from 'workspace:workspace:@medplum/react';
+import { SignInForm } from '@medplum/react';
 import { useNavigate } from 'react-router-dom';
 import { MEDPLUM_GOOGLE_CLIENT_ID, MEDPLUM_PROJECT_ID } from '../config';
 
