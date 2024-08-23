@@ -10,9 +10,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { App } from './App';
 
 const medplum = new MedplumClient({
+  baseUrl: 'http://localhost:8103', // Replace with your self-hosted server URL
   onUnauthenticated: () => (window.location.href = '/'),
   cacheTime: 3000,
-  // baseUrl: 'http://localhost:8103/', //Uncomment this to run against the server on your localhost; also change `googleClientId` in `./pages/SignInPage.tsx`
 });
 
 const theme = createTheme({

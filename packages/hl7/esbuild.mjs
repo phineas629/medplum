@@ -1,8 +1,12 @@
 /* global console */
 /* eslint no-console: "off" */
 
+import { readFile } from 'fs/promises';
 import esbuild from 'esbuild';
 import { writeFileSync } from 'fs';
+
+// Read the package.json file
+const packageJson = JSON.parse(await readFile(new URL('./package.json', import.meta.url), 'utf-8'));
 
 const options = {
   entryPoints: ['./src/index.ts'],

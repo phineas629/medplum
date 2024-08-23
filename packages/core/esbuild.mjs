@@ -1,10 +1,12 @@
 /* global console */
 /* eslint no-console: "off" */
 
+import { readFile } from 'fs/promises';
 import { execSync } from 'child_process';
 import esbuild from 'esbuild';
 import { writeFileSync } from 'fs';
-import packageJson from './package.json' with { type: 'json' };
+
+const packageJson = JSON.parse(await readFile(new URL('./package.json', import.meta.url), 'utf-8'));
 
 let gitHash;
 try {

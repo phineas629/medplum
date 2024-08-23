@@ -3,9 +3,14 @@
 /* eslint no-console: "off" */
 /*eslint no-process-exit: "off"*/
 
-import botLayer from '@medplum/bot-layer/package.json' with { type: 'json' };
+import { readFile } from 'fs/promises';
 import esbuild from 'esbuild';
 import fastGlob from 'fast-glob';
+import { URL } from 'url'; // Add this line
+
+
+// Read the package.json file
+const botLayer = JSON.parse(await readFile(new URL('@medplum/bot-layer/package.json', import.meta.url), 'utf-8'));
 
 // Find all TypeScript files in your source directory
 const entryPoints = fastGlob.sync('./src/**/*.ts').filter((file) => !file.endsWith('test.ts'));
