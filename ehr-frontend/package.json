@@ -1,0 +1,28 @@
+{
+  "name": "ehr-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "ehr-frontend/core",
+    "ehr-frontend/chat",
+    "ehr-frontend/client-external-idp",
+    "ehr-frontend/eligibility",
+    "ehr-frontend/fhircast",
+    "ehr-frontend/hello-world",
+    "ehr-frontend/live-chat",
+    "ehr-frontend/nextjs",
+    "ehr-frontend/patient-intake",
+    "ehr-frontend/photon-integration",
+    "ehr-frontend/provider",
+    "ehr-frontend/react-native-example",
+    "ehr-frontend/scheduling",
+    "ehr-frontend/task",
+    "ehr-frontend/websocket-subscriptions"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev": "npm run dev --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  }
+}
