@@ -1,5 +1,6 @@
 import { AppShell, ErrorBoundary, Loading, Logo, useMedplum, useMedplumProfile } from '@medplum/react';
 import {
+  IconArrowBack,
   IconClipboardHeart,
   IconClipboardList,
   IconDatabaseImport,
@@ -24,6 +25,16 @@ export function App(): JSX.Element | null {
     <AppShell
       logo={<Logo size={24} />}
       menus={[
+        {
+          title: 'Navigation',
+          links: [
+            {
+              icon: <IconArrowBack />,
+              label: 'Back to Core',
+              href: '/',
+            },
+          ],
+        },
         {
           title: 'Charts',
           links: [{ icon: <IconUser />, label: 'Patients', href: '/Patient' }],
