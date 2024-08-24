@@ -17,7 +17,7 @@
     "paths": {
       "@chart": ["../../chart/src/*"]
     },
-    "include": ["../../chart/src"]
   },
+  "include": ["src", "../../chart/src"],
   "exclude": ["dist"]
 }
