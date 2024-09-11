@@ -1,96 +1,120 @@
-import { Button, Stack, Title } from '@mantine/core';
+import { Button, Stack, Title, Loader } from '@mantine/core';
 import { useMedplum, Document, useMedplumNavigate } from '@medplum/react';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-/**
- * The Medplum API server URL.
- * The default value for Medplum's hosted API server is "https://api.medplum.com/".
- * If you are using your own Medplum server, then you can set this value to your server URL.
- */
-const MEDPLUM_BASE_URL = 'https://api.medplum.com/';
-// const MEDPLUM_BASE_URL = 'http://localhost:8103/';
-
-/**
- * Your Medplum project ID.
- * You can find this value on the "Project Admin" page in the Medplum web app.
- */
-const MEDPLUM_PROJECT_ID = '';
-
-/**
- * Your Medplum client ID.
- * You can find this value on the "Project Admin" page in the Medplum web app.
- * Note that the client must have the correct external auth provider configured.
- */
-const MEDPLUM_CLIENT_ID = '=';
-
-/**
- * Your web application redirect URL.
- * This value must match the redirect URI in your Medplum client application.
- */
-const WEB_APP_REDIRECT_URI = 'http://localhost:8000/signin';
-
-/**
- * External OAuth2 "authorize" endpoint URL.
- * For example, this would be an Auth0, AWS Cognito, or Okta URL.
- * This value is specific to your external auth provider.
- */
-const EXTERNAL_AUTHORIZE_URL = '';
-
-/**
- * External OAuth2 client ID.
- * This value is specific to your external auth provider.
- */
-const EXTERNAL_CLIENT_ID = '';
-
-/**
- * External OAuth2 redirect URI.
- * This must match the redirect URI configured in your external auth provider.
- * If using Medplum's hosted API server, the redirect URI must be "https://api.medplum.com/auth/external".
- * If using your own Medplum server, the redirect URI must be "https://<your server>/auth/external".
- */
-const EXTERNAL_REDIRECT_URI = MEDPLUM_BASE_URL + 'auth/external';
+interface Config {
+  EXTERNAL_AUTHORIZE_URL: string;
+  EXTERNAL_CLIENT_ID: string;
+  EXTERNAL_REDIRECT_URI: string;
+  MEDPLUM_PROJECT_ID: string;
+  MEDPLUM_CLIENT_ID: string;
+  WEB_APP_REDIRECT_URI: string;
+}
 
 export function SignInPage(): JSX.Element {
   const medplum = useMedplum();
   const navigate = useMedplumNavigate();
+  const [config, setConfig] = useState<Config | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // The code check
-  // If the current URL includes a "code" query string param, then we can exchange it for a token
+  useEffect(() => {
+    async function fetchConfig(): Promise<void> {
+      try {
+        setIsLoading(true);
+        // Fetch configuration from environment variables
+        const fetchedConfig: Config = {
+          EXTERNAL_AUTHORIZE_URL: import.meta.env.VITE_EXTERNAL_AUTHORIZE_URL,
+          EXTERNAL_CLIENT_ID: import.meta.env.VITE_EXTERNAL_CLIENT_ID,
+          EXTERNAL_REDIRECT_URI: import.meta.env.VITE_EXTERNAL_REDIRECT_URI,
+          MEDPLUM_PROJECT_ID: import.meta.env.VITE_MEDPLUM_PROJECT_ID,
+          MEDPLUM_CLIENT_ID: import.meta.env.VITE_MEDPLUM_CLIENT_ID,
+          WEB_APP_REDIRECT_URI: import.meta.env.VITE_WEB_APP_REDIRECT_URI,
+        };
+        setConfig(fetchedConfig);
+      } catch {
+        // Do not expose any error messages
+        setError('Failed to load configuration. Please try again later.');
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchConfig().catch(() => {
+      // Handle any errors that may occur during the fetchConfig call
+      setError('Failed to load configuration. Please try again later.');
+    });
+  }, []);
+
   const code = new URLSearchParams(window.location.search).get('code');
 
   useEffect(() => {
-    console.log('Got code', code);
-    if (code) {
-      // Process the code
-      // On success, remove the query string parameters
+    if (code && config) {
       medplum
         .processCode(code)
-        .then(() => navigate('/'))
-        .catch(console.error);
+        .then(() => {
+          navigate('/');
+        })
+        .catch(() => {
+          setError('Failed to process authentication code. Please try again.');
+        });
     }
-  }, [medplum, navigate, code]);
+  }, [medplum, navigate, code, config]);
 
   const handleClick = useCallback(() => {
-    medplum
-      .signInWithExternalAuth(
-        EXTERNAL_AUTHORIZE_URL,
-        EXTERNAL_CLIENT_ID,
-        EXTERNAL_REDIRECT_URI,
-        {
-          projectId: MEDPLUM_PROJECT_ID,
-          clientId: MEDPLUM_CLIENT_ID,
-          redirectUri: WEB_APP_REDIRECT_URI,
-        },
-        false,
-      )
-      .catch(console.error);
-  }, [medplum]);
+    if (config) {
+      medplum
+        .signInWithExternalAuth(
+          config.EXTERNAL_AUTHORIZE_URL,
+          config.EXTERNAL_CLIENT_ID,
+          config.EXTERNAL_REDIRECT_URI,
+          {
+            projectId: config.MEDPLUM_PROJECT_ID,
+            clientId: config.MEDPLUM_CLIENT_ID,
+            redirectUri: config.WEB_APP_REDIRECT_URI,
+          },
+          false
+        )
+        .catch(() => {
+          setError('Failed to initiate sign-in. Please try again.');
+        });
+    } else {
+      setError('Configuration not loaded. Please try again later.');
+    }
+  }, [medplum, config]);
+
+  if (isLoading) {
+    return (
+      <Document width={500}>
+        <Stack align="center">
+          <Loader />
+          <Title order={2}>Loading...</Title>
+        </Stack>
+      </Document>
+    );
+  }
+
+  if (error) {
+    return (
+      <Document width={500}>
+        <Stack align="center">
+          <Title order={2}>Error</Title>
+          <p>{error}</p>
+          <Button onClick={() => window.location.reload()} aria-label="Retry">
+            Retry
+          </Button>
+        </Stack>
+      </Document>
+    );
+  }
 
   return (
     <Document width={500}>
       <Stack align="center">
         <Title order={2}>Welcome!</Title>
-        <Button onClick={handleClick}>Sign In</Button>
+        <Button onClick={handleClick} aria-label="Sign In">
+          Sign In
+        </Button>
       </Stack>
     </Document>
   );

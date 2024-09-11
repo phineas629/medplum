@@ -1,0 +1,100 @@
+The main reason the new code style passed linting while the previous one didn't is due to the way we're extending the MedplumClient functionality. Let's break down the key differences:
+
+1. Type Safety:
+In the previous version, we were directly adding methods to the `medplum` instance:
+
+
+```43:64:medplum/client.ts
+medplum.getProfile = async function() {
+  return this.request('GET', '/auth/me');
+};
+
+medplum.getProject = async function() {
+  const profile = await this.getProfile();
+  return profile?.project;
+};
+
+medplum.getProjectMembership = async function() {
+  const profile = await this.getProfile();
+  return profile?.projectMembership;
+};
+
+medplum.getAccessToken = async function() {
+  return this.getAccessToken();
+};
+
+medplum.setProject = async function(projectId) {
+  // Implement the logic to switch projects
+  // This might involve updating the client's state or making an API call
+};
+```
+
+
+This approach caused type issues because TypeScript doesn't recognize these dynamically added methods as part of the MedplumClient type.
+
+In the new version, we create a wrapper class `ExtendedMedplumClient` that encapsulates the MedplumClient:
+
+```typescript
+class ExtendedMedplumClient {
+  private client: MedplumClient;
+
+  constructor(config: typeof medplumConfig) {
+    this.client = new MedplumClient(config);
+  }
+
+  // Methods are defined here
+}
+```
+
+This approach allows us to define the additional methods with proper TypeScript types, resolving many of the linting issues.
+
+2. Async/Await Consistency:
+In the previous version, some methods were using async/await while others weren't, leading to inconsistent return types. For example:
+
+
+```57:59:medplum/client.ts
+medplum.getAccessToken = async function() {
+  return this.getAccessToken();
+};
+```
+
+
+This caused a type mismatch because the method was declared as async but was returning a synchronous value.
+
+In the new version, we ensure consistent use of async/await:
+
+```typescript
+async getAccessToken(): Promise<string | undefined> {
+  return this.client.getAccessToken();
+}
+```
+
+3. Proper Type Assertions:
+In the previous version, we were using optional chaining without proper type assertions:
+
+
+```47:50:medplum/client.ts
+medplum.getProject = async function() {
+  const profile = await this.getProfile();
+  return profile?.project;
+};
+```
+
+
+This could lead to type errors because TypeScript couldn't infer the correct types.
+
+In the new version, we use proper type assertions:
+
+```typescript
+async getProject(): Promise<Project | undefined> {
+  const profile = await this.getProfile();
+  return (profile as ProfileResource & { project?: Project })?.project;
+}
+```
+
+4. Avoiding Direct Modification of MedplumClient:
+The previous version attempted to add methods directly to the MedplumClient instance, which is not type-safe and can lead to linting errors.
+
+The new version creates a new class that wraps MedplumClient, allowing us to extend functionality in a type-safe manner.
+
+By addressing these issues, the new code style provides better type safety, consistency, and adherence to TypeScript best practices, which allows it to pass linting checks.

@@ -1,4 +1,4 @@
-import { MedplumClient } from '@medplum/core';
+import { MedplumClient } from '@medplum/core'; // Ensure this is the only import path for MedplumClient
 
 import { MantineProvider, createTheme } from '@mantine/core';
 import '@mantine/core/styles.css';
