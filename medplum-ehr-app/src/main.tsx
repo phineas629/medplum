@@ -1,33 +1,11 @@
 import { MantineProvider, createTheme } from '@mantine/core';
 import '@mantine/core/styles.css';
-import { MedplumClient } from '@medplum/core';
 import { MedplumProvider } from '@medplum/react';
 import '@medplum/react/styles.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { App } from './App';
-
-// Initialize the Medplum client with proper authentication handling
-const medplum = new MedplumClient({
-  // Redirect to sign-in page when user is unauthenticated
-  onUnauthenticated: () => {
-    console.log('User is unauthenticated, redirecting to sign-in page');
-    window.location.href = '/signin';
-  },
-
-  // Configure Medplum server URL
-  baseUrl: 'http://localhost:8103/', // Update this URL to match your local Medplum server
-
-  // Pass custom options as any to bypass TypeScript restrictions
-  // The actual Medplum client may have these properties available
-} as any);
-
-// Listen for token changes
-// Note: We need to use the actual API provided by the MedplumClient
-medplum.addEventListener('change', () => {
-  console.log('Authentication state changed');
-});
+import App from './App';
+import { medplumClient } from './services/medplum';
 
 // Create a custom theme for Mantine
 const theme = createTheme({
@@ -80,12 +58,10 @@ const container = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(container);
 root.render(
   <StrictMode>
-    <BrowserRouter>
-      <MedplumProvider medplum={medplum}>
-        <MantineProvider theme={theme}>
-          <App />
-        </MantineProvider>
-      </MedplumProvider>
-    </BrowserRouter>
+    <MedplumProvider medplum={medplumClient}>
+      <MantineProvider theme={theme}>
+        <App />
+      </MantineProvider>
+    </MedplumProvider>
   </StrictMode>
 ); 

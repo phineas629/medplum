@@ -1,74 +1,77 @@
-import { AppShell, ErrorBoundary, Loading, Logo, useMedplum, useMedplumProfile } from '@medplum/react';
-import {
-  IconCalendarEvent,
-  IconChartLine,
-  IconClipboardList,
-  IconDashboard,
-  IconSettings,
-  IconUsers,
-} from '@tabler/icons-react';
-import { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-
-// Import pages
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { LoginPage } from './pages/LoginPage';
+import { RegisterPage } from './pages/RegisterPage';
 import { DashboardPage } from './pages/DashboardPage';
-import { LandingPage } from './pages/LandingPage';
-import { PatientDetailsPage } from './pages/PatientDetailsPage';
 import { PatientsPage } from './pages/PatientsPage';
-import { ReportsPage } from './pages/ReportsPage';
 import { SchedulePage } from './pages/SchedulePage';
-import { SignInPage } from './pages/SignInPage';
 import { TasksPage } from './pages/TasksPage';
-import { UserSettingsPage } from './pages/UserSettingsPage';
+import { ReportsPage } from './pages/ReportsPage';
+import { AppLayout } from './components/AppLayout';
+import { MedplumProvider } from '@medplum/react';
+import { medplumClient } from './services/medplum';
 
-export function App(): JSX.Element | null {
-  const medplum = useMedplum();
-  const profile = useMedplumProfile();
-
-  if (medplum.isLoading()) {
-    return null;
-  }
-
+function App(): JSX.Element {
   return (
-    <>
-      {/* Render the custom header outside of AppShell */}
-      {profile && (
-        <div style={{ position: 'sticky', top: 0, zIndex: 100 }}>
-          {/* We'll add back PatientPortalHeader when we fix the imports */}
-        </div>
-      )}
-      
-      <AppShell
-        logo={<Logo size={32} />}
-        menus={[
-          {
-            title: 'EHR Menu',
-            links: [
-              { icon: <IconDashboard size={18} />, label: 'Dashboard', href: '/' },
-              { icon: <IconUsers size={18} />, label: 'Patients', href: '/patients' },
-              { icon: <IconCalendarEvent size={18} />, label: 'Schedule', href: '/schedule' },
-              { icon: <IconClipboardList size={18} />, label: 'Tasks', href: '/tasks' },
-              { icon: <IconChartLine size={18} />, label: 'Reports', href: '/reports' },
-              { icon: <IconSettings size={18} />, label: 'Settings', href: '/settings' },
-            ],
-          },
-        ]}
-      >
-        <ErrorBoundary>
-          <Suspense fallback={<Loading />}>
-            <Routes>
-              <Route path="/" element={profile ? <DashboardPage /> : <LandingPage />} />
-              <Route path="/signin" element={<SignInPage />} />
-              <Route path="/patients" element={<PatientsPage />} />
-              <Route path="/patients/:id" element={<PatientDetailsPage />} />
-              <Route path="/schedule" element={<SchedulePage />} />
-              <Route path="/tasks" element={<TasksPage />} />
-              <Route path="/reports" element={<ReportsPage />} />
-              <Route path="/settings" element={<UserSettingsPage />} />
-            </Routes>
-          </Suspense>
-        </ErrorBoundary>
-      </AppShell>
-    </>
+    <MedplumProvider medplum={medplumClient}>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <AppLayout>
+                  <DashboardPage />
+                </AppLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/patients"
+            element={
+              <ProtectedRoute>
+                <AppLayout>
+                  <PatientsPage />
+                </AppLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/schedule"
+            element={
+              <ProtectedRoute>
+                <AppLayout>
+                  <SchedulePage />
+                </AppLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/tasks"
+            element={
+              <ProtectedRoute>
+                <AppLayout>
+                  <TasksPage />
+                </AppLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/reports"
+            element={
+              <ProtectedRoute>
+                <AppLayout>
+                  <ReportsPage />
+                </AppLayout>
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </MedplumProvider>
   );
-} 
+}
+
+export default App; 
