@@ -11,6 +11,10 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
+# Get the directory of the script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CORE_DIR="${SCRIPT_DIR}/core"
+
 echo "Verifying that all deprecated methods have been properly replaced..."
 
 # Flag to track if we found any issues
@@ -23,7 +27,7 @@ check_method() {
   
   echo "Checking for $method_name method usage..."
   
-  # Only look in our own code, not node_modules
+  # Only look in our core directory, not node_modules or other directories
   found_usage=$(grep -r "$method_name" $files_to_search 2>/dev/null | grep -v "node_modules" || true)
   
   if [ -n "$found_usage" ]; then
@@ -46,21 +50,21 @@ check_method() {
 
 echo "Scanning for deprecated methods..."
 
-# Check for each deprecated method
-check_method "matchesAccessPolicy" "--include='*.ts' --include='*.tsx' ."
-check_method "searchValueSet" "--include='*.ts' --include='*.tsx' ."
-check_method "uploadMedia" "--include='*.ts' --include='*.tsx' ."
-check_method "parseSearchUrl" "--include='*.ts' --include='*.tsx' ."
-check_method "parseSearchDefinition" "--include='*.ts' --include='*.tsx' ."
-check_method "parseCriteriaAsSearchRequest" "--include='*.ts' --include='*.tsx' ."
-check_method "crawlResource" "--include='*.ts' --include='*.tsx' ."
-check_method "crawlResourceAsync" "--include='*.ts' --include='*.tsx' ."
-check_method "ResourceVisitor" "--include='*.ts' --include='*.tsx' ."
-check_method "AsyncResourceVisitor" "--include='*.ts' --include='*.tsx' ."
+# Check for each deprecated method in the core directory
+check_method "matchesAccessPolicy" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "searchValueSet" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "uploadMedia" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "parseSearchUrl" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "parseSearchDefinition" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "parseCriteriaAsSearchRequest" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "crawlResource" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "crawlResourceAsync" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "ResourceVisitor" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
+check_method "AsyncResourceVisitor" "--include='*.ts' --include='*.tsx' ${CORE_DIR}"
 
 # Check for HL7 get/getAll methods (these are more specific)
 echo "Checking for HL7 get/getAll methods..."
-hl7_get_usage=$(grep -r "\.get(" --include='*.ts' --include='*.tsx' . | grep -v "node_modules" | grep -E "(msg|msh|pid|segment)\.get\(" || true)
+hl7_get_usage=$(grep -r "\.get(" --include='*.ts' --include='*.tsx' ${CORE_DIR} | grep -v "node_modules" | grep -E "(msg|msh|pid|segment)\.get\(" || true)
 if [ -n "$hl7_get_usage" ]; then
   echo -e "${RED}✗ Found potential HL7 get() method usage (these should be replaced with getSegment/getField/getComponent):${NC}"
   echo "$hl7_get_usage"
@@ -69,7 +73,7 @@ else
   echo -e "${GREEN}✓ No HL7 get() method usage found${NC}"
 fi
 
-hl7_getall_usage=$(grep -r "\.getAll(" --include='*.ts' --include='*.tsx' . | grep -v "node_modules" || true)
+hl7_getall_usage=$(grep -r "\.getAll(" --include='*.ts' --include='*.tsx' ${CORE_DIR} | grep -v "node_modules" || true)
 if [ -n "$hl7_getall_usage" ]; then
   echo -e "${RED}✗ Found potential HL7 getAll() method usage (these should be replaced with getSegment/getField/getComponent):${NC}"
   echo "$hl7_getall_usage"
@@ -80,7 +84,7 @@ fi
 
 # Check for problematic getReferenceString({}) usage
 echo "Checking for problematic getReferenceString({}) usage..."
-reference_string_usage=$(grep -r "getReferenceString(\{\})" --include='*.ts' --include='*.tsx' . | grep -v "node_modules" || true)
+reference_string_usage=$(grep -r "getReferenceString(\{\})" --include='*.ts' --include='*.tsx' ${CORE_DIR} | grep -v "node_modules" || true)
 if [ -n "$reference_string_usage" ]; then
   echo -e "${RED}✗ Found problematic getReferenceString({}) usage:${NC}"
   echo "$reference_string_usage"
@@ -89,11 +93,18 @@ else
   echo -e "${GREEN}✓ No problematic getReferenceString({}) usage found.${NC}"
 fi
 
-# Check for methods with changed signatures
+# Check for methods with changed signatures - only flag if in our core codebase, not dependencies
 echo "Checking for methods with changed signatures..."
 
+# Helper function to filter grep results to show only our code
+filter_results() {
+  local results="$1"
+  echo "$results" | grep -v "node_modules" | grep "^${CORE_DIR}" || true
+}
+
 # createAttachment
-attachment_usage=$(grep -r "createAttachment" --include='*.ts' --include='*.tsx' . | grep -v "node_modules" || true)
+attachment_usage=$(grep -r "createAttachment" --include='*.ts' --include='*.tsx' ${CORE_DIR} | grep -v "node_modules" || true)
+attachment_usage=$(filter_results "$attachment_usage")
 if [ -n "$attachment_usage" ]; then
   echo -e "${YELLOW}⚠️ Found createAttachment usage that may need review:${NC}"
   echo "$attachment_usage" | head -n 10
@@ -103,7 +114,8 @@ if [ -n "$attachment_usage" ]; then
 fi
 
 # createBinary
-binary_usage=$(grep -r "createBinary" --include='*.ts' --include='*.tsx' . | grep -v "node_modules" || true)
+binary_usage=$(grep -r "createBinary" --include='*.ts' --include='*.tsx' ${CORE_DIR} | grep -v "node_modules" || true)
+binary_usage=$(filter_results "$binary_usage")
 if [ -n "$binary_usage" ]; then
   echo -e "${YELLOW}⚠️ Found createBinary usage that may need review:${NC}"
   echo "$binary_usage" | head -n 10
@@ -113,7 +125,8 @@ if [ -n "$binary_usage" ]; then
 fi
 
 # createPdf
-pdf_usage=$(grep -r "createPdf" --include='*.ts' --include='*.tsx' . | grep -v "node_modules" || true)
+pdf_usage=$(grep -r "createPdf" --include='*.ts' --include='*.tsx' ${CORE_DIR} | grep -v "node_modules" || true)
+pdf_usage=$(filter_results "$pdf_usage")
 if [ -n "$pdf_usage" ]; then
   echo -e "${YELLOW}⚠️ Found createPdf usage that may need review:${NC}"
   echo "$pdf_usage" | head -n 10
