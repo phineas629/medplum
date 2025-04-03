@@ -1,128 +1,129 @@
 #!/bin/bash
 
-# Script to replace deprecated methods with their v4.0.0 alternatives
-echo "Scanning codebase for deprecated method usage..."
+# Script to fix deprecated Medplum methods in preparation for v4.0.0 migration
+# To be run from the ehr-frontend directory
 
-# Create a log file for the replacements
-CHANGES_LOG="deprecated-method-changes.log"
-echo "Deprecated Method Replacement Log" > $CHANGES_LOG
-echo "--------------------------------" >> $CHANGES_LOG
-echo "Generated on: $(date)" >> $CHANGES_LOG
-echo "" >> $CHANGES_LOG
+set -e  # Exit on error
 
-# Function to replace deprecated methods in files
-replace_in_files() {
-  local pattern=$1
-  local replacement=$2
-  local pattern_desc=$3
-  local files_glob=$4
+# Colors for output
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 
-  echo "Searching for $pattern_desc..."
-  
-  # Find files containing the pattern
-  matched_files=$(grep -l "$pattern" --include="$files_glob" --recursive .)
-  
-  if [ -z "$matched_files" ]; then
-    echo "No files found with $pattern_desc."
-    echo "No files found with $pattern_desc." >> $CHANGES_LOG
+echo -e "${YELLOW}Starting deprecated methods migration for Medplum v4.0.0...${NC}"
+
+# Function to replace deprecated methods in a file
+replace_in_file() {
+  local file="$1"
+  local old_pattern="$2"
+  local new_pattern="$3"
+  local description="$4"
+
+  if grep -q "$old_pattern" "$file"; then
+    echo -e "${YELLOW}Replacing $description in $file${NC}"
+    sed -i.bak "s/$old_pattern/$new_pattern/g" "$file"
+    rm "${file}.bak"
+    echo -e "${GREEN}✓ Fixed $description in $file${NC}"
     return 0
   fi
-  
-  echo "Found $pattern_desc in the following files:"
-  echo "$matched_files"
-  echo "" >> $CHANGES_LOG
-  echo "Files containing $pattern_desc:" >> $CHANGES_LOG
-  echo "$matched_files" >> $CHANGES_LOG
-  echo "" >> $CHANGES_LOG
-  
-  # Ask if we should proceed with replacement
-  read -p "Replace $pattern_desc with $replacement? (y/n): " answer
-  if [[ $answer == "y" ]]; then
-    for file in $matched_files; do
-      echo "Replacing in $file..."
-      
-      # Create backup
-      cp "$file" "${file}.bak"
-      
-      # Perform replacement
-      sed -i.tmp "s/$pattern/$replacement/g" "$file"
-      rm -f "${file}.tmp"
-      
-      echo "Replaced in $file" >> $CHANGES_LOG
-    done
-    echo "Replacement completed."
-  else
-    echo "Skipping replacement for $pattern_desc."
-    echo "Skipped replacement for $pattern_desc." >> $CHANGES_LOG
-  fi
-  
-  echo "" >> $CHANGES_LOG
+  return 1
 }
 
-# Map of deprecated methods to their replacements
-echo "Processing replacements for deprecated methods..."
+# Find all TypeScript/JavaScript files in the core directory
+CORE_FILES=$(find core -type f \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" \) | grep -v "node_modules" | grep -v "dist")
 
-# 1. matchesAccessPolicy -> satisfiedAccessPolicy
-replace_in_files "matchesAccessPolicy" "satisfiedAccessPolicy" "matchesAccessPolicy method" "*.ts"
+# Counter for changes
+CHANGES_MADE=0
 
-# 2. searchValueSet -> valueSetExpand
-replace_in_files "searchValueSet" "valueSetExpand" "searchValueSet method" "*.ts"
+echo -e "${YELLOW}Scanning and fixing files...${NC}"
 
-# 3. uploadMedia -> createMedia
-replace_in_files "uploadMedia" "createMedia" "uploadMedia method" "*.ts"
+# Process each file
+for file in $CORE_FILES; do
+  # 1. Replace matchesAccessPolicy with satisfiedAccessPolicy
+  if replace_in_file "$file" "matchesAccessPolicy" "satisfiedAccessPolicy" "matchesAccessPolicy"; then
+    ((CHANGES_MADE++))
+  fi
 
-# 4. parseSearchUrl -> parseSearchRequest
-replace_in_files "parseSearchUrl" "parseSearchRequest" "parseSearchUrl method" "*.ts"
+  # 2. Replace searchValueSet with valueSetExpand
+  if replace_in_file "$file" "searchValueSet" "valueSetExpand" "searchValueSet"; then
+    ((CHANGES_MADE++))
+  fi
 
-# 5. parseSearchDefinition -> parseSearchRequest
-replace_in_files "parseSearchDefinition" "parseSearchRequest" "parseSearchDefinition method" "*.ts"
+  # 3. Replace uploadMedia with createMedia
+  if replace_in_file "$file" "uploadMedia" "createMedia" "uploadMedia"; then
+    ((CHANGES_MADE++))
+  fi
 
-# 6. parseCriteriaAsSearchRequest -> parseSearchRequest
-replace_in_files "parseCriteriaAsSearchRequest" "parseSearchRequest" "parseCriteriaAsSearchRequest method" "*.ts"
+  # 4. Replace parseSearchUrl with parseSearchRequest
+  if replace_in_file "$file" "parseSearchUrl" "parseSearchRequest" "parseSearchUrl"; then
+    ((CHANGES_MADE++))
+  fi
 
-# 7. crawlResource -> crawlTypedValue
-replace_in_files "crawlResource" "crawlTypedValue" "crawlResource method" "*.ts"
+  # 5. Replace parseSearchDefinition with parseSearchRequest
+  if replace_in_file "$file" "parseSearchDefinition" "parseSearchRequest" "parseSearchDefinition"; then
+    ((CHANGES_MADE++))
+  fi
 
-# 8. crawlResourceAsync -> crawlTypedValueAsync
-replace_in_files "crawlResourceAsync" "crawlTypedValueAsync" "crawlResourceAsync method" "*.ts"
+  # 6. Replace parseCriteriaAsSearchRequest with parseSearchRequest
+  if replace_in_file "$file" "parseCriteriaAsSearchRequest" "parseSearchRequest" "parseCriteriaAsSearchRequest"; then
+    ((CHANGES_MADE++))
+  fi
 
-# 9. ResourceVisitor -> CrawlerVisitor
-replace_in_files "ResourceVisitor" "CrawlerVisitor" "ResourceVisitor interface" "*.ts"
+  # 7. Replace crawlResource with crawlTypedValue
+  if replace_in_file "$file" "crawlResource" "crawlTypedValue" "crawlResource"; then
+    ((CHANGES_MADE++))
+  fi
 
-# 10. AsyncResourceVisitor -> AsyncCrawlerVisitor
-replace_in_files "AsyncResourceVisitor" "AsyncCrawlerVisitor" "AsyncResourceVisitor interface" "*.ts"
+  # 8. Replace crawlResourceAsync with crawlTypedValueAsync
+  if replace_in_file "$file" "crawlResourceAsync" "crawlTypedValueAsync" "crawlResourceAsync"; then
+    ((CHANGES_MADE++))
+  fi
 
-# 11. HL7 get and getAll -> getSegment, getField, getComponent
-echo "HL7 get and getAll methods require context-dependent replacements."
-echo "Please manually review files that use HL7 get/getAll and replace with appropriate methods:"
-echo "  - getSegment"
-echo "  - getField" 
-echo "  - getComponent"
+  # 9. Replace ResourceVisitor with CrawlerVisitor
+  if replace_in_file "$file" "ResourceVisitor" "CrawlerVisitor" "ResourceVisitor"; then
+    ((CHANGES_MADE++))
+  fi
 
-echo "For example:"
-echo "  - Replace 'get('MSH')' with 'getSegment('MSH')'"
-echo "  - Replace 'get('MSH.7')' with 'getField('MSH', 7)'"
+  # 10. Replace AsyncResourceVisitor with AsyncCrawlerVisitor
+  if replace_in_file "$file" "AsyncResourceVisitor" "AsyncCrawlerVisitor" "AsyncResourceVisitor"; then
+    ((CHANGES_MADE++))
+  fi
 
-# Function overload methods require more careful handling
-echo ""
-echo "The following methods have changed signatures but need manual review:"
-echo "- createAttachment"
-echo "- createBinary"
-echo "- createPdf"
+  # 11. Check for HL7 get/getAll usage and provide instructions for manual fixes
+  if grep -q "\.get(" "$file" || grep -q "\.getAll(" "$file"; then
+    echo -e "${YELLOW}Potential HL7 get/getAll usage found in $file${NC}"
+    echo -e "${YELLOW}Please manually update to use getSegment/getField/getComponent as appropriate${NC}"
+    ((CHANGES_MADE++))
+  fi
 
-echo "Scanning for potential getReferenceString({}) usage..."
-getReferenceStringEmpty=$(grep -r "getReferenceString(\{\})" --include="*.ts" --include="*.tsx" .)
-if [ -n "$getReferenceStringEmpty" ]; then
-  echo "Found potentially problematic getReferenceString({}) calls:"
-  echo "$getReferenceStringEmpty"
-  echo ""
-  echo "In v4.0.0, getReferenceString requires input to have 'reference' string for Reference types"
-  echo "or both 'resourceType' and 'id' for Resource types."
-  echo "Please update these calls manually."
+  # 12. Update function signatures for createAttachment, createBinary, createPdf
+  # These may need more specific patterns and manual review
+  if grep -q "createAttachment" "$file" || grep -q "createBinary" "$file" || grep -q "createPdf" "$file"; then
+    echo -e "${YELLOW}Found method with changed signature in $file${NC}"
+    echo -e "${YELLOW}Please manually update to use new object-based parameter style${NC}"
+    ((CHANGES_MADE++))
+  fi
+done
+
+# Report results
+if [ $CHANGES_MADE -eq 0 ]; then
+  echo -e "${GREEN}✓ No deprecated methods found in the codebase${NC}"
+else
+  echo -e "${YELLOW}Made $CHANGES_MADE changes to migrate deprecated methods${NC}"
+  echo -e "${YELLOW}Some changes may require manual review. Please check output for details.${NC}"
 fi
 
-echo ""
-echo "Replacement process completed. See $CHANGES_LOG for details."
-echo "Please review all changes and manually fix any remaining issues."
-echo ""
-echo "IMPORTANT: Run tests after making these changes to verify functionality." 
+# Check for typescript installation
+if ! command -v tsc &> /dev/null; then
+  echo -e "${YELLOW}Installing TypeScript globally...${NC}"
+  npm install -g typescript
+fi
+
+# Run TypeScript compiler to check for errors
+echo -e "${YELLOW}Running TypeScript compiler to check for errors...${NC}"
+cd core
+npx tsc --noEmit
+
+echo -e "${GREEN}Finished fixing deprecated methods!${NC}"
+echo -e "${YELLOW}Run tests to verify all changes work correctly.${NC}" 
