@@ -64,3 +64,6 @@ packages/agent/sea-prep.blob
 packages/agent/src/upgrader-logs-*.txt
 ehr-frontend/mantine-analytics-dashboard/
 ehr-frontend/mantine-analytics-dashboard/
+
+# Test reports
+/test-reports/
