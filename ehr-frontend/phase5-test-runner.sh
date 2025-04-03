@@ -77,7 +77,7 @@ run_test "Core Unit Tests" "npx vitest run" "${SCRIPT_DIR}/core" || true
 run_test "Medplum v4.0.0 API Tests" "npx vitest run src/__tests__/MedplumApiV4.test.ts" "${SCRIPT_DIR}/core" || true
 
 # 3. TypeScript Compilation
-run_test "TypeScript Compilation Check" "tsc --noEmit" "${SCRIPT_DIR}/core" || true
+run_test "TypeScript Compilation Check" "npx tsc --noEmit" "${SCRIPT_DIR}/core" || true
 
 # 4. Dependency Checks
 run_test "Dependency Check" "npm list @medplum/core @medplum/react @medplum/fhirtypes" "${SCRIPT_DIR}/core" || true
