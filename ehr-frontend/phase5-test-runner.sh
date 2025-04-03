@@ -97,8 +97,8 @@ fi
 
 # Summary
 echo "### Test Summary" >> "${REPORT_FILE}"
-PASS_COUNT=$(grep -c "✅ \*\*PASSED\*\*" "${REPORT_FILE}" || echo 0)
-FAIL_COUNT=$(grep -c "❌ \*\*FAILED\*\*" "${REPORT_FILE}" || echo 0)
+PASS_COUNT=$(grep -c "✅ \*\*PASSED\*\*" "${REPORT_FILE}" || echo "0")
+FAIL_COUNT=$(grep -c "❌ \*\*FAILED\*\*" "${REPORT_FILE}" || echo "0")
 TOTAL_COUNT=$((PASS_COUNT + FAIL_COUNT))
 
 echo "- Total Tests: ${TOTAL_COUNT}" >> "${REPORT_FILE}"
@@ -108,7 +108,7 @@ echo -e "\n" >> "${REPORT_FILE}"
 
 # Recommendations
 echo "## Recommendations" >> "${REPORT_FILE}"
-if [ ${FAIL_COUNT} -gt 0 ]; then
+if [ "${FAIL_COUNT}" -gt 0 ]; then
   echo "⚠️ Some tests failed. Review the test report for details and address issues before proceeding to production deployment." >> "${REPORT_FILE}"
 else
   echo "✅ All tests passed. Ready to proceed to Phase 6: Production Deployment." >> "${REPORT_FILE}"
@@ -116,7 +116,7 @@ fi
 
 echo "📝 Test report generated: ${REPORT_FILE}"
 
-if [ ${FAIL_COUNT} -gt 0 ]; then
+if [ "${FAIL_COUNT}" -gt 0 ]; then
   echo "⚠️ ${FAIL_COUNT} tests failed. Review the report for details."
   exit 1
 else
