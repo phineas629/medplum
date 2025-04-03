@@ -84,7 +84,7 @@ fi
 
 # Check for problematic getReferenceString({}) usage
 echo "Checking for problematic getReferenceString({}) usage..."
-reference_string_usage=$(grep -r "getReferenceString(\{\})" --include='*.ts' --include='*.tsx' ${CORE_DIR} | grep -v "node_modules" || true)
+reference_string_usage=$(grep -r "getReferenceString[[:space:]]*([[:space:]]*{[[:space:]]*}[[:space:]]*)" --include='*.ts' --include='*.tsx' ${CORE_DIR} | grep -v "node_modules" || true)
 if [ -n "$reference_string_usage" ]; then
   echo -e "${RED}✗ Found problematic getReferenceString({}) usage:${NC}"
   echo "$reference_string_usage"
