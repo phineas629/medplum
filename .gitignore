@@ -67,3 +67,7 @@ ehr-frontend/mantine-analytics-dashboard/
 
 # Test reports
 /test-reports/
+
+# Deployment logs
+ehr-frontend/deployment/logs/*
+!ehr-frontend/deployment/logs/.gitkeep
